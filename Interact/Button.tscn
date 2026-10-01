@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cu10fhjof20hx"]
+
+[ext_resource type="Script" uid="uid://10cvhcrltc8i" path="res://Interact/Interactable.gd" id="1_jv1eq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wrg0x"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jv1eq"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[node name="Button" type="StaticBody3D" unique_id=769972517]
+script = ExtResource("1_jv1eq")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="." unique_id=1999524283]
+mesh = SubResource("BoxMesh_wrg0x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1666176680]
+shape = SubResource("ConvexPolygonShape3D_jv1eq")

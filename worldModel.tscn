@@ -1,0 +1,428 @@
+[gd_scene format=3 uid="uid://cqldt08iu0xpb"]
+
+[ext_resource type="Texture2D" uid="uid://ph5ew4vfrxhc" path="res://texture/wall/beige_wall_001_diff_4k.png" id="1_48200"]
+[ext_resource type="Texture2D" uid="uid://derdvqgnky7l8" path="res://texture/wall/beige_wall_001_nor_gl_4k.png" id="2_kkgdj"]
+[ext_resource type="Texture2D" uid="uid://b7pguanh74tio" path="res://texture/wall/beige_wall_001_rough_4k.png" id="3_y16kx"]
+[ext_resource type="Texture2D" uid="uid://d4bq4hpn7dky" path="res://texture/white-marble-unity/white-marble_albedo.png" id="4_rjd3d"]
+[ext_resource type="Texture2D" uid="uid://7j0cgkfimci" path="res://texture/white-marble-unity/white-marble_ao.png" id="5_8sapi"]
+[ext_resource type="Texture2D" uid="uid://bug0nptahya1p" path="res://texture/white-marble-unity/white-marble_normal-ogl.png" id="6_fb4kl"]
+[ext_resource type="Texture2D" uid="uid://ddagl8wix2rwr" path="res://texture/white-marble-unity/white-marble_height.png" id="7_6pp7a"]
+[ext_resource type="Script" uid="uid://d31m3018vhy0b" path="res://entradaText.gd" id="8_6qdxh"]
+[ext_resource type="AudioStream" uid="uid://cshl0j0e8oif1" path="res://sons/dor.mp3" id="9_ghsv3"]
+[ext_resource type="Script" uid="uid://ce6c44sdg4ub3" path="res://audio_stream_player_3d_3.gd" id="10_yhr8f"]
+[ext_resource type="AudioStream" uid="uid://dk2u1i1rqfe4j" path="res://sons/bem-vindo-ao-estagio.mp3" id="11_fq611"]
+[ext_resource type="AudioStream" uid="uid://k66ehtkg655k" path="res://sons/certifique-que-esta-preparado.mp3" id="12_emw7q"]
+[ext_resource type="Script" uid="uid://c8fduadc6okim" path="res://audio_stream_player_2.gd" id="13_ydde2"]
+[ext_resource type="AudioStream" uid="uid://ccgqt7rr2g0tl" path="res://sons/clique-na-ficha.mp3" id="14_vo3iu"]
+[ext_resource type="Script" uid="uid://be403eg3v1tvx" path="res://audio_stream_player_3.gd" id="15_u7pva"]
+[ext_resource type="AudioStream" uid="uid://ce7seqoiru6hq" path="res://sons/toque-na-macaneta.mp3" id="16_t16pc"]
+[ext_resource type="Script" uid="uid://b1nya4q3spufc" path="res://audio_stream_player_4.gd" id="17_8hnum"]
+[ext_resource type="PackedScene" uid="uid://cu10fhjof20hx" path="res://Interact/Button.tscn" id="19_rd4xx"]
+[ext_resource type="ArrayMesh" uid="uid://bfndb0cjkn1tr" path="res://Model/lavatorio cirurgico.obj" id="20_vjcg0"]
+[ext_resource type="ArrayMesh" uid="uid://c4ssy73bmc4id" path="res://Model/HospitalBed.obj" id="21_5iyq3"]
+[ext_resource type="PackedScene" uid="uid://gwukow4o5htn" path="res://blender/door/door1.blend" id="22_1lw3k"]
+[ext_resource type="PackedScene" uid="uid://5exxr2ta7gue" path="res://blender/door/door2.blend" id="23_f26rt"]
+[ext_resource type="ArrayMesh" uid="uid://cfcrtmdblf3rq" path="res://Model/mesa cirurgica.obj" id="24_q04ip"]
+[ext_resource type="ArrayMesh" uid="uid://bw1m5ljlr85dc" path="res://Model/berço.obj" id="25_4gm7j"]
+[ext_resource type="ArrayMesh" uid="uid://ppdj23d2p6v0" path="res://Model/lixeira.obj" id="26_itln4"]
+[ext_resource type="PackedScene" uid="uid://c2ete5xhnh1qx" path="res://blender/hospital bed/hospital bed.blend" id="27_q4prx"]
+[ext_resource type="PackedScene" uid="uid://dbob1g3oijbhl" path="res://blender/mulher1.blend" id="28_lcx5t"]
+[ext_resource type="PackedScene" uid="uid://dkjv48ry00y5s" path="res://blender/armchair/armchair.blend" id="29_41qs3"]
+[ext_resource type="Texture2D" uid="uid://drtwpqlp5r5w6" path="res://Image/PLACA.png" id="30_txkul"]
+[ext_resource type="PackedScene" uid="uid://bx7qqfj1qd5bv" path="res://blender/homem1.blend" id="37_16xsn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_profp"]
+albedo_color = Color(1.351, 1.495, 1.495, 1)
+albedo_texture = ExtResource("1_48200")
+roughness_texture = ExtResource("3_y16kx")
+normal_enabled = true
+normal_texture = ExtResource("2_kkgdj")
+uv1_scale = Vector3(1.433, 3.26, 1.433)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rncum"]
+albedo_color = Color(1.351, 1.495, 1.495, 1)
+albedo_texture = ExtResource("1_48200")
+roughness_texture = ExtResource("3_y16kx")
+normal_enabled = true
+normal_texture = ExtResource("2_kkgdj")
+uv1_scale = Vector3(4.455, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mm7g"]
+albedo_color = Color(1.2237577, 1.2237577, 1.2237577, 0.96400005)
+albedo_texture = ExtResource("4_rjd3d")
+roughness_texture = ExtResource("7_6pp7a")
+normal_enabled = true
+normal_texture = ExtResource("6_fb4kl")
+ao_enabled = true
+ao_texture = ExtResource("5_8sapi")
+uv1_scale = Vector3(0.394, 0.185, 0.185)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rd4an"]
+albedo_color = Color(2.3560116, 2.6034334, 2.6034334, 1)
+albedo_texture = ExtResource("1_48200")
+roughness_texture = ExtResource("3_y16kx")
+normal_enabled = true
+normal_texture = ExtResource("2_kkgdj")
+uv1_scale = Vector3(1.68, 1.68, 1.68)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_upmy7"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_8uh7m"]
+sky_material = SubResource("ProceduralSkyMaterial_upmy7")
+
+[sub_resource type="Environment" id="Environment_gx2gx"]
+background_mode = 2
+sky = SubResource("Sky_8uh7m")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5lqkp"]
+albedo_texture = ExtResource("30_txkul")
+
+[node name="Start" type="Node3D" unique_id=1247091342]
+
+[node name="PAREDE 2" type="CSGBox3D" parent="." unique_id=1744983239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.3116, 3.0426931, -12.982269)
+use_collision = true
+size = Vector3(0.001, 10, 32)
+material = SubResource("StandardMaterial3D_profp")
+
+[node name="PAREDE 11" type="CSGBox3D" parent="." unique_id=1230565562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.016056, 3.0426931, -12.985671)
+use_collision = true
+size = Vector3(0.001, 10, 32)
+material = SubResource("StandardMaterial3D_profp")
+
+[node name="PAREDE 14" type="CSGBox3D" parent="." unique_id=939706492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.858093, 3.0426931, -12.985671)
+use_collision = true
+size = Vector3(0.001, 10, 32)
+material = SubResource("StandardMaterial3D_profp")
+
+[node name="PAREDE 3" type="CSGBox3D" parent="." unique_id=2069996399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.83268, 3, -26.015594)
+use_collision = true
+size = Vector3(0.001, 10, 31.968811)
+material = SubResource("StandardMaterial3D_profp")
+
+[node name="PAREDE 4" type="CSGBox3D" parent="." unique_id=378868260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.610058, 3.0267162, -10.017319)
+use_collision = true
+size = Vector3(21, 10, 0.001)
+material = SubResource("StandardMaterial3D_rncum")
+
+[node name="PAREDE 7" type="CSGBox3D" parent="." unique_id=280536106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.36149, 3.0267162, -23.013332)
+use_collision = true
+size = Vector3(21, 10, 0.001)
+material = SubResource("StandardMaterial3D_rncum")
+
+[node name="PAREDE 13" type="CSGBox3D" parent="." unique_id=251887304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.6945, 3.0267162, -10.024555)
+use_collision = true
+size = Vector3(21.337402, 10, 0.001)
+material = SubResource("StandardMaterial3D_rncum")
+
+[node name="PAREDE 5" type="CSGBox3D" parent="." unique_id=840587716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.818794, 3.0267162, -10.017319)
+use_collision = true
+size = Vector3(4.0810547, 10, 0.001)
+material = SubResource("StandardMaterial3D_rncum")
+
+[node name="PAREDE 9" type="CSGBox3D" parent="." unique_id=324577566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.831, 3.027, -0.949)
+use_collision = true
+size = Vector3(21, 10, 0.001)
+material = SubResource("StandardMaterial3D_rncum")
+
+[node name="chao" type="CSGBox3D" parent="." unique_id=1316141759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13)
+use_collision = true
+size = Vector3(20, 0.001, 32)
+material = SubResource("StandardMaterial3D_7mm7g")
+script = ExtResource("8_6qdxh")
+
+[node name="chao2" type="CSGBox3D" parent="." unique_id=941790476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -13)
+use_collision = true
+size = Vector3(20, 0.001, 32)
+material = SubResource("StandardMaterial3D_7mm7g")
+script = ExtResource("8_6qdxh")
+
+[node name="teto" type="CSGBox3D" parent="." unique_id=2049021547]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.748003, 8, -13)
+use_collision = true
+size = Vector3(20, 0.001, 32)
+material = SubResource("StandardMaterial3D_rd4an")
+script = ExtResource("8_6qdxh")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="teto" unique_id=1427778015]
+transform = Transform3D(1, 0, 0, 0, 0.07015691, -0.997536, 0, 0.997536, 0.07015691, -6.3717785, -0.7082634, 9.123009)
+omni_range = 20.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="teto" unique_id=1699874276]
+transform = Transform3D(1, 0, 0, 0, 0.07015691, -0.997536, 0, 0.997536, 0.07015691, 4.717558, -0.7082634, 9.123009)
+omni_range = 20.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="teto" unique_id=87302840]
+transform = Transform3D(1, 0, 0, 0, 0.07015691, -0.997536, 0, 0.997536, 0.07015691, 0.137, -0.44821405, -4.677479)
+omni_range = 20.0
+
+[node name="teto2" type="CSGBox3D" parent="." unique_id=178997618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7488, 8, -13)
+use_collision = true
+size = Vector3(20, 0.001, 32)
+material = SubResource("StandardMaterial3D_rd4an")
+script = ExtResource("8_6qdxh")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="teto2" unique_id=419319676]
+transform = Transform3D(1, 0, 0, 0, 0.07015691, -0.997536, 0, 0.997536, 0.07015691, -6.3717785, -0.7082634, 9.123009)
+omni_range = 20.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="teto2" unique_id=634411891]
+transform = Transform3D(1, 0, 0, 0, 0.07015691, -0.997536, 0, 0.997536, 0.07015691, 3.1984386, -0.7082634, 9.123009)
+omni_range = 20.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="teto2" unique_id=1616318169]
+transform = Transform3D(1, 0, 0, 0, 0.07015691, -0.997536, 0, 0.997536, 0.07015691, 0.137, -0.44821405, -4.677479)
+omni_range = 20.0
+
+[node name="PAREDE 6" type="CSGBox3D" parent="." unique_id=500790910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.42353, 3.0267162, -10.017319)
+use_collision = true
+size = Vector3(19.128418, 10, 0.001)
+material = SubResource("StandardMaterial3D_rncum")
+
+[node name="PAREDE 10" type="CSGBox3D" parent="." unique_id=171332970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.58554, 3.0267162, -0.94885015)
+use_collision = true
+size = Vector3(19.13916, 10, 0.001)
+material = SubResource("StandardMaterial3D_rncum")
+
+[node name="PAREDE 12" type="CSGBox3D" parent="." unique_id=186561856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.430046, 3.0267162, 0.97544384)
+use_collision = true
+size = Vector3(19.13916, 10, 0.001)
+material = SubResource("StandardMaterial3D_rncum")
+
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="." unique_id=540363178]
+transform = Transform3D(-0.97747123, 0, 0.21106881, 0, 1, 0, -0.21106881, 0, -0.97747123, -38.54525, 3.0196223, -19.28755)
+stream = ExtResource("9_ghsv3")
+volume_db = -8.819
+script = ExtResource("10_yhr8f")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1376783639]
+stream = ExtResource("11_fq611")
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=826860837]
+stream = ExtResource("12_emw7q")
+script = ExtResource("13_ydde2")
+
+[node name="asp" type="AudioStreamPlayer" parent="." unique_id=75810243]
+stream = ExtResource("14_vo3iu")
+script = ExtResource("15_u7pva")
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="." unique_id=1037015437]
+stream = ExtResource("16_t16pc")
+script = ExtResource("17_8hnum")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2008639495]
+transform = Transform3D(0.021273991, -4.7421157e-08, 0.9997737, -0.9997737, 1.7387606e-07, 0.021273991, -1.7484555e-07, -1, -4.371139e-08, -50.84175, 3.9685352, -4.371827)
+visible = false
+stream = ExtResource("11_fq611")
+emission_angle_enabled = true
+emission_angle_degrees = 29.4
+emission_angle_filter_attenuation_db = 0.0
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="." unique_id=1602947522]
+transform = Transform3D(-1.7577547e-07, -1, -8.7412886e-08, -0.9997737, 1.7387606e-07, 0.021273991, -0.021273991, 9.113255e-08, -0.9997737, -57.84175, 2.9685352, -7.371827)
+visible = false
+stream = ExtResource("12_emw7q")
+emission_angle_enabled = true
+emission_angle_degrees = 29.4
+emission_angle_filter_attenuation_db = 0.0
+
+[node name="chao3" type="CSGBox3D" parent="." unique_id=1789861924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 0, -12.965791)
+use_collision = true
+size = Vector3(20, 0.001, 32)
+material = SubResource("StandardMaterial3D_7mm7g")
+script = ExtResource("8_6qdxh")
+
+[node name="chao4" type="CSGBox3D" parent="." unique_id=1880627393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59, 0, -13)
+use_collision = true
+size = Vector3(20, 0.001, 32)
+material = SubResource("StandardMaterial3D_7mm7g")
+script = ExtResource("8_6qdxh")
+
+[node name="teto3" type="CSGBox3D" parent="." unique_id=182212784]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.748802, 8, -13)
+use_collision = true
+size = Vector3(20, 0.001, 32)
+material = SubResource("StandardMaterial3D_rd4an")
+script = ExtResource("8_6qdxh")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="teto3" unique_id=658050247]
+transform = Transform3D(1, 0, 0, 0, 0.07015691, -0.997536, 0, 0.997536, 0.07015691, -6.3717785, -0.7082634, 9.123009)
+omni_range = 20.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="teto3" unique_id=1142298984]
+transform = Transform3D(1, 0, 0, 0, 0.07015691, -0.997536, 0, 0.997536, 0.07015691, 3.1984367, -0.7082634, 9.123009)
+omni_range = 20.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="teto3" unique_id=1681897530]
+transform = Transform3D(1, 0, 0, 0, 0.07015691, -0.997536, 0, 0.997536, 0.07015691, 0.137, -0.44821405, -4.677479)
+omni_range = 20.0
+
+[node name="teto4" type="CSGBox3D" parent="." unique_id=713056632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.748802, 8, -13)
+use_collision = true
+size = Vector3(20, 0.001, 32)
+material = SubResource("StandardMaterial3D_rd4an")
+script = ExtResource("8_6qdxh")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="teto4" unique_id=1253693229]
+transform = Transform3D(1, 0, 0, 0, 0.07015691, -0.997536, 0, 0.997536, 0.07015691, -6.3717785, -0.7082634, 9.123009)
+omni_range = 20.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="teto4" unique_id=30169211]
+transform = Transform3D(1, 0, 0, 0, 0.07015691, -0.997536, 0, 0.997536, 0.07015691, 3.1984367, -0.7082634, 9.123009)
+omni_range = 20.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="teto4" unique_id=398606011]
+transform = Transform3D(1, 0, 0, 0, 0.07015691, -0.997536, 0, 0.997536, 0.07015691, 0.137, -0.44821405, -4.677479)
+omni_range = 20.0
+
+[node name="Button" parent="." unique_id=62503752 instance=ExtResource("19_rd4xx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.36, -38.222733, 3, -9.695887)
+prompt_message = "Pegar a Prancheta"
+
+[node name="Button2" parent="." unique_id=1699863328 instance=ExtResource("19_rd4xx")]
+transform = Transform3D(2.44, 4.6814898e-07, 0, -2.1331158e-07, 5.355, 0, 0, 0, -0.305, -41.536728, 2.1, -10)
+visible = false
+prompt_message = "Sala de Parto"
+
+[node name="Button3" parent="." unique_id=887271474 instance=ExtResource("19_rd4xx")]
+transform = Transform3D(-2.598643e-07, 0, -1.9055542, 0, 4.9699993, 0, 5.945002, 0, -8.3294424e-08, -48.08446, 2.5149443, -5.5456705)
+visible = false
+prompt_message = "Corredor"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1524382135]
+environment = SubResource("Environment_gx2gx")
+
+[node name="LavatorioCirurgico" type="MeshInstance3D" parent="." unique_id=1003543511]
+transform = Transform3D(-1.7484554e-09, 0.04, -1.5285486e-16, -1.7484556e-09, 7.642743e-17, 0.04, 0.04, 1.7484554e-09, 1.7484556e-09, -32.82711, 1.0638704, -1.0049865)
+mesh = ExtResource("20_vjcg0")
+
+[node name="HospitalBed" type="MeshInstance3D" parent="." unique_id=1768380433]
+transform = Transform3D(-0.02, 0, 1.8626451e-09, 0, 0.02, 0, -1.8626451e-09, 0, -0.02, 3.280398, 1.3352766, -22.255924)
+visible = false
+mesh = ExtResource("21_5iyq3")
+metadata/_edit_group_ = true
+
+[node name="door2" parent="." unique_id=1694073708 instance=ExtResource("22_1lw3k")]
+transform = Transform3D(-8.545577e-08, 0, -1.86, 0, 2.285, 0, 1.955, 0, -8.1303185e-08, -41.823452, 0, -10.178787)
+
+[node name="door4" parent="." unique_id=414429857 instance=ExtResource("22_1lw3k")]
+transform = Transform3D(-9.988052e-08, 0, -1.86, 0, 2.285, 0, 2.285, 0, -8.1303185e-08, -42.07545, 0, -0.9652772)
+
+[node name="door10" parent="." unique_id=1942226019 instance=ExtResource("23_f26rt")]
+transform = Transform3D(2.285, 0, 0, 0, 2.285, 0, 0, 0, 2.285, -48.118244, 0, -3.7084332)
+
+[node name="MesaCirurgica2" type="MeshInstance3D" parent="." unique_id=414769456]
+transform = Transform3D(0.016923383, -0.19928268, -1.5045423e-08, -9.145777e-16, -1.5099573e-08, 0.19999996, -0.19928268, -0.016923383, -1.2776828e-09, -46.183258, 0.006021261, -15.564309)
+mesh = ExtResource("24_q04ip")
+skeleton = NodePath("../MesaCirurgica")
+
+[node name="MesaCirurgica" type="MeshInstance3D" parent="." unique_id=1038239208]
+transform = Transform3D(0.2, 0, 0, -8.470329e-23, -8.742278e-09, 0.2, 0, -0.2, -8.742278e-09, -37.698788, 0.11277866, -11.132287)
+mesh = ExtResource("24_q04ip")
+
+[node name="Berço" type="MeshInstance3D" parent="." unique_id=11590553]
+transform = Transform3D(-0.024906456, -0.0021606367, -9.444451e-11, 3.4929604e-17, -1.0927846e-09, 0.024999997, -0.0021606367, 0.024906456, 1.0886959e-09, -41.640667, 2.4060035, -20.39024)
+mesh = ExtResource("25_4gm7j")
+
+[node name="Lixeira" type="MeshInstance3D" parent="." unique_id=2052075431]
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, 0.02, 0, -0.02, -8.7422775e-10, -44.588158, 1.789773, -19.07855)
+mesh = ExtResource("26_itln4")
+
+[node name="hospital bed" parent="." unique_id=303509457 instance=ExtResource("27_q4prx")]
+transform = Transform3D(0.2626794, 0, 2.375521, 0, 2.39, 0, -2.375521, 0, 0.2626794, -38.907463, -9.536743e-07, -17.736872)
+
+[node name="mulher1" parent="hospital bed" unique_id=457497963 instance=ExtResource("28_lcx5t")]
+transform = Transform3D(-0.01732403, 0.9747466, -0.06382148, -0.01231515, 0.06360851, 0.97483677, 0.9767561, 0.018090338, 0.011158994, -0.7615938, 0.8368201, -0.021748304)
+
+[node name="mulher2" parent="hospital bed" unique_id=514330121 instance=ExtResource("28_lcx5t")]
+transform = Transform3D(-0.014179954, -0.2354347, 0.20423867, -0.08240275, 0.20000695, 0.22483552, -0.3005873, -0.043723304, -0.07127101, -0.51965904, 0.74019337, -0.015617132)
+
+[node name="armchair" parent="." unique_id=576570127 instance=ExtResource("29_41qs3")]
+transform = Transform3D(0.008543552, 0, -0.02875774, 0, 0.029999994, 0, 0.02875774, 0, 0.008543552, -35.041615, 0.17856964, -18.74674)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1954291372]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -48.085686, 5.983507, -5.437174)
+size = Vector3(0.11645508, 4, 1)
+material = SubResource("StandardMaterial3D_5lqkp")
+
+[node name="pos" type="CSGBox3D" parent="." unique_id=1115392671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.15263, 0.5853441, -11.241247)
+
+[node name="homem1" parent="." unique_id=1580281409 instance=ExtResource("37_16xsn")]
+transform = Transform3D(0.5462761, 0.10826078, -1.5425504, -0.036139976, 1.6364228, 0.102050476, 1.5459225, 0, 0.5474703, -35.597363, -0.5748947, -18.541908)
+
+[node name="Skeleton3D" parent="homem1/Human_rig" parent_id_path=PackedInt32Array(1580281409, 613764880) index="0" unique_id=1142839454]
+bones/0/rotation = Quaternion(0.4045232, 0, 0, 0.91452783)
+bones/1/rotation = Quaternion(0.73880243, 0.6718314, 0.052152697, -0.009678156)
+bones/2/rotation = Quaternion(-0.6690896, -0.60371727, 0.23664296, 0.36310425)
+bones/3/rotation = Quaternion(-0.022473795, 0.005086118, -0.010743811, 0.9996768)
+bones/4/rotation = Quaternion(0.69546497, 0.00088613585, 0.040495288, 0.71741754)
+bones/6/rotation = Quaternion(-0.5904159, -0.06677254, -0.02748981, 0.80386245)
+bones/8/rotation = Quaternion(0.73880243, -0.6718314, -0.052152697, -0.009678156)
+bones/9/rotation = Quaternion(-0.6690896, 0.60371727, -0.23664296, 0.36310425)
+bones/10/rotation = Quaternion(-0.022473795, -0.005086118, 0.010743811, 0.9996768)
+bones/11/rotation = Quaternion(0.69546497, -0.00088613585, -0.040495288, 0.71741754)
+bones/13/rotation = Quaternion(-0.5904159, 0.06677254, 0.02748981, 0.80386245)
+bones/16/rotation = Quaternion(0.43844074, 0, 0, 0.89876014)
+bones/17/rotation = Quaternion(-0.021514034, 0, 0, 0.99976856)
+bones/23/rotation = Quaternion(-0.32730612, -0.31492856, -0.0020365212, 0.89089096)
+bones/24/rotation = Quaternion(-0.47486347, -0.074774735, 0.13503163, 0.8664179)
+bones/25/rotation = Quaternion(0.020773742, 0.13131744, -0.02348202, 0.9908445)
+bones/26/rotation = Quaternion(-0.10158223, 0.21590929, -0.41823107, 0.87644)
+bones/28/rotation = Quaternion(-0.03456841, -0.049920503, -0.120543964, 0.99084926)
+bones/30/rotation = Quaternion(-0.22451769, 0.33525574, -0.03952068, 0.9141299)
+bones/33/rotation = Quaternion(0.15988527, -0.3460361, 0.12207553, 0.9164024)
+bones/37/rotation = Quaternion(-1.809368e-05, -0.34802502, 0.067229845, 0.9350716)
+bones/41/rotation = Quaternion(0.029163595, -0.33139616, 0.10833397, 0.9367976)
+bones/45/rotation = Quaternion(-0.102693446, -0.2803995, 0.033756815, 0.95377713)
+bones/49/rotation = Quaternion(-0.32730612, 0.31492856, 0.0020365212, 0.89089096)
+bones/50/rotation = Quaternion(-0.47486347, 0.074774735, -0.13503163, 0.8664179)
+bones/51/rotation = Quaternion(0.020773742, -0.13131744, 0.02348202, 0.9908445)
+bones/52/rotation = Quaternion(-0.10158223, -0.21590929, 0.41823107, 0.87644)
+bones/54/rotation = Quaternion(-0.03456841, 0.049920503, 0.120543964, 0.99084926)
+bones/55/rotation = Quaternion(0.20480382, 0.8601671, -0.46240798, -0.06593146)
+bones/56/rotation = Quaternion(-0.22451769, -0.33525574, 0.03952068, 0.9141299)
+bones/59/rotation = Quaternion(0.15988527, 0.3460361, -0.12207553, 0.9164024)
+bones/63/rotation = Quaternion(-1.809368e-05, 0.34802502, -0.067229845, 0.9350716)
+bones/67/rotation = Quaternion(0.029163595, 0.33139616, -0.10833397, 0.9367976)
+bones/71/rotation = Quaternion(-0.102693446, 0.2803995, -0.033756815, 0.95377713)
+bones/92/rotation = Quaternion(-0.6143604, 0.67425203, -0.14802334, -0.3821448)
+bones/97/rotation = Quaternion(0.81235904, 0.25669613, 0.25815642, -0.4555603)
+bones/101/rotation = Quaternion(0.81235915, -0.25669613, -0.25815648, -0.45556033)
+bones/113/rotation = Quaternion(0.97413623, 0.20378461, -0.0016527546, -0.09761007)
+bones/114/rotation = Quaternion(0.97413623, -0.2037846, 0.0016527603, -0.097610064)
+bones/128/rotation = Quaternion(0.2512976, 0.6820037, 0.68588156, -0.035874855)
+bones/132/rotation = Quaternion(-0.5273335, 0.6858857, -0.49404836, -0.08600214)
+
+[node name="AnimationPlayer" parent="homem1" index="1" unique_id=1025221528]
+autoplay = &"sentado"
+
+[connection signal="finished" from="AudioStreamPlayer3D3" to="AudioStreamPlayer3D3" method="_on_finished"]
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer2" method="_on_audio_stream_player_finished"]
+[connection signal="finished" from="asp" to="AudioStreamPlayer4" method="_on_asp_finished"]
+[connection signal="interacted" from="Button2" to="AudioStreamPlayer3D3" method="_on_button_2_interacted"]
+[connection signal="interacted" from="Button3" to="asp" method="_on_button_3_interacted"]
+
+[editable path="homem1"]

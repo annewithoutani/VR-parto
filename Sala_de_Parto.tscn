@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cpf5tobscytw2"]
+
+[node name="SalaDeParto" type="Node3D" unique_id=1077544616]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1894789883]
+size = Vector3(16, 0.001, 16)

@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://byumd6hwaykg6"]
+
+[ext_resource type="Script" uid="uid://byjqhx0kdyik7" path="res://Interact/interactRay.gd" id="1_m1u82"]
+
+[node name="InteractRay" type="RayCast3D"]
+target_position = Vector3(0, 0, -5)
+script = ExtResource("1_m1u82")
+
+[node name="Prompt" type="Label" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 53.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texto" type="Label" parent="."]
+visible = false
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 153.0
+offset_top = 118.0
+offset_right = -153.0
+offset_bottom = 273.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1

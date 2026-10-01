@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://cdii585rquyy3"]
+
+[ext_resource type="Script" uid="uid://cdkf2svlf8c1a" path="res://Player/player.gd" id="1_3qydi"]
+[ext_resource type="Texture2D" uid="uid://tfxggq8uau1q" path="res://Player/crosshair.png" id="2_q3lat"]
+[ext_resource type="PackedScene" uid="uid://byumd6hwaykg6" path="res://Model/InteractRay.tscn" id="2_tok1r"]
+[ext_resource type="PackedScene" uid="uid://d3qfgt0olewd4" path="res://Model/prancheta/prancheta.glb" id="4_ddoul"]
+[ext_resource type="PackedScene" uid="uid://b4n8b3aqdeg4e" path="res://Player/textbox.tscn" id="5_8g4oa"]
+[ext_resource type="Texture2D" uid="uid://bqdgukyognhe1" path="res://Image/adorno.webp" id="6_6ysni"]
+[ext_resource type="Texture2D" uid="uid://dm1wcg2muiwnf" path="res://Image/enf.png" id="7_s1rgi"]
+[ext_resource type="Texture2D" uid="uid://bjn5km4lcc7uh" path="res://Image/roupa-priv.png" id="8_j23h2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_onrkg"]
+radius = 1.0
+height = 4.0
+
+[node name="Player" type="CharacterBody3D" unique_id=1738024914]
+script = ExtResource("1_3qydi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=909812601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("CapsuleShape3D_onrkg")
+
+[node name="Prancheta" parent="." unique_id=1294366258 instance=ExtResource("4_ddoul")]
+transform = Transform3D(-1.3113416e-07, 0, -3, -2.1213207, 2.1213205, 9.272587e-08, 2.1213205, 2.1213207, -9.2725855e-08, -0.027343765, 2.627147, -0.966609)
+visible = false
+
+[node name="Head" type="Node3D" parent="." unique_id=611471339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1726801036]
+
+[node name="ColorRect" type="ColorRect" parent="Head/Camera3D" unique_id=1594000326]
+offset_left = -13.0
+offset_top = -15.0
+offset_right = 1170.0
+offset_bottom = 662.0
+color = Color(0, 0, 0, 0.49803922)
+
+[node name="InteractRay" parent="Head" unique_id=1441357256 instance=ExtResource("2_tok1r")]
+
+[node name="UI" type="Control" parent="." unique_id=255029488]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 565.0
+offset_top = 235.0
+offset_right = 605.0
+offset_bottom = 275.0
+
+[node name="cross" type="TextureRect" parent="UI" unique_id=998750566]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 62.0
+offset_right = -6.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q3lat")
+expand_mode = 1
+
+[node name="Textbox" parent="UI" unique_id=318471699 instance=ExtResource("5_8g4oa")]
+
+[node name="Control" type="Control" parent="UI" unique_id=44228249]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="adorno" type="TextureRect" parent="UI/Control" unique_id=142259091]
+modulate = Color(1, 1, 1, 0)
+top_level = true
+layout_mode = 0
+offset_left = 138.0
+offset_top = 128.0
+offset_right = 1118.0
+offset_bottom = 1108.0
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("6_6ysni")
+
+[node name="relogio" type="TextureRect" parent="UI/Control" unique_id=425794246]
+modulate = Color(1, 1, 1, 0)
+top_level = true
+layout_mode = 0
+offset_left = 491.005
+offset_top = 186.38
+offset_right = 1471.0061
+offset_bottom = 1944.589
+scale = Vector2(0.168, 0.168)
+texture = ExtResource("7_s1rgi")
+expand_mode = 3
+
+[node name="roupa" type="TextureRect" parent="UI/Control" unique_id=1883874380]
+modulate = Color(1, 1, 1, 0)
+top_level = true
+layout_mode = 0
+offset_left = 874.375
+offset_top = 152.51
+offset_right = 1854.3748
+offset_bottom = 1132.51
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("8_j23h2")

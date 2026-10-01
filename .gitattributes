@@ -1,0 +1,15 @@
+# Normalize EOL for all files that Git considers text files.
+* text=auto eol=lf
+
+# Do not attempt text diffs for binary project assets.
+*.blend binary
+*.fbx binary
+*.glb binary
+*.obj binary
+*.stl binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.mp3 binary
+*.wav binary

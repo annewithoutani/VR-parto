@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://v7snjgrqitg4"]
+
+[ext_resource type="PackedScene" uid="uid://cdii585rquyy3" path="res://Player/Player.tscn" id="1_qih2i"]
+[ext_resource type="ArrayMesh" uid="uid://cfcrtmdblf3rq" path="res://Model/mesa cirurgica.obj" id="2_qih2i"]
+[ext_resource type="ArrayMesh" uid="uid://bw1m5ljlr85dc" path="res://Model/berço.obj" id="4_2pks0"]
+[ext_resource type="ArrayMesh" uid="uid://ppdj23d2p6v0" path="res://Model/lixeira.obj" id="5_ijgdv"]
+[ext_resource type="ArrayMesh" uid="uid://c4ssy73bmc4id" path="res://Model/HospitalBed.obj" id="5_yerdr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_37kl0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ijgdv"]
+sky_material = SubResource("ProceduralSkyMaterial_37kl0")
+
+[sub_resource type="Environment" id="Environment_6uqi0"]
+background_mode = 2
+sky = SubResource("Sky_ijgdv")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="chao" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018743515, 0.017554998, -8.012264)
+use_collision = true
+size = Vector3(20, 0.001, 20)
+
+[node name="parede 2" type="CSGBox3D" parent="chao"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -3)
+use_collision = true
+size = Vector3(20, 6, 0.001)
+
+[node name="parede 3" type="CSGBox3D" parent="chao"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10, 3, 0)
+use_collision = true
+size = Vector3(20, 6, 0.001)
+
+[node name="parede 4" type="CSGBox3D" parent="chao"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.9999995, 3, 0)
+use_collision = true
+size = Vector3(20, 6, 0.001)
+
+[node name="parede 1" type="CSGBox3D" parent="chao"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 10)
+use_collision = true
+size = Vector3(20, 6, 0.001)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6uqi0")
+
+[node name="Player" parent="." instance=ExtResource("1_qih2i")]
+
+[node name="MesaCirurgica2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.3573014e-09, -0.2, -1.5099582e-08, -8.881784e-16, -1.509958e-08, 0.2, -0.2, 6.3572987e-09, -1.192931e-15, 1.4693098, 0.0060203075, -2.4243388)
+mesh = ExtResource("2_qih2i")
+skeleton = NodePath("../MesaCirurgica")
+
+[node name="MesaCirurgica" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.742278e-09, -0.2, -8.742278e-09, -4.2351648e-23, -8.742278e-09, 0.2, -0.2, 8.742278e-09, 3.8213717e-16, -8.158733, 0.3034551, -1.487174)
+mesh = ExtResource("2_qih2i")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.8371291, -8)
+size = Vector3(2, 0.3569336, 20)
+
+[node name="Berço" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.018830763, 0.016443916, 7.1878636e-10, 0, -1.0927848e-09, 0.025, 0.016443916, 0.018830763, 8.2311885e-10, -7.6530905, 2.4060035, -6.75325)
+mesh = ExtResource("4_2pks0")
+
+[node name="HospitalBed" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.014452917, 0, 0.0040141237, 0, 0.015, 0, -0.0040141237, 0, -0.014452917, -0.9743626, 1.0460925, -7.0518026)
+mesh = ExtResource("5_yerdr")
+
+[node name="Lixeira" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, 0.02, 0, -0.02, -8.7422775e-10, -5.0669107, 1.7897735, -8.424157)
+mesh = ExtResource("5_ijgdv")

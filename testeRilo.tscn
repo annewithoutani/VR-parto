@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://ydia5dwhkrf8"]
+
+[ext_resource type="Script" uid="uid://ces1j6plojyra" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_6b4bb"]
+[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="2_hnq6s"]
+[ext_resource type="Script" uid="uid://63kcxw7ch0ct" path="res://direita.gd" id="3_66jxi"]
+[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="4_atgmd"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="5_mt6d6"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_4g8tw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k7tm8"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_gjee3"]
+sky_material = SubResource("ProceduralSkyMaterial_k7tm8")
+
+[sub_resource type="Environment" id="Environment_n43qr"]
+background_mode = 2
+sky = SubResource("Sky_gjee3")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ur0n6"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_e7pcm"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_y55a8"]
+
+[node name="Node3D" type="Node3D" unique_id=1391407504]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=285194059]
+environment = SubResource("Environment_n43qr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1919931061]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=346620241]
+transform = Transform3D(4.34, 0, 0, 0, 4.34, 0, 0, 0, 4.34, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ur0n6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1526567598]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=35236830]
+shape = SubResource("ConcavePolygonShape3D_e7pcm")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1276604427]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23137426, 2.3841858e-07, -1.2482042)
+script = ExtResource("1_6b4bb")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=317875446]
+transform = Transform3D(0.05683215, 0, -0.99838376, 0, 1, 0, 0.99838376, 0, 0.05683215, 0, 2.9265127, 0)
+
+[node name="Esquerda" type="XRController3D" parent="XROrigin3D" unique_id=2096809081]
+transform = Transform3D(0.05683215, 0, -0.99838376, 0, 1, 0, 0.99838376, 0, 0.05683215, -58.539604, 2.7967122, -6.934337)
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="XROrigin3D/Esquerda" unique_id=512396154 instance=ExtResource("2_hnq6s")]
+
+[node name="Direita" type="XRController3D" parent="XROrigin3D" unique_id=623613152 groups=["is_held"]]
+transform = Transform3D(0.05683215, 0, -0.99838376, 0, 1, 0, 0.99838376, 0, 0.05683215, -58.5396, 2.7967122, -6.200916)
+tracker = &"right_hand"
+script = ExtResource("3_66jxi")
+
+[node name="RayCast3D" type="RayCast3D" parent="XROrigin3D/Direita" unique_id=1142512280]
+target_position = Vector3(0, -1, -10)
+collide_with_areas = true
+
+[node name="RightHand" parent="XROrigin3D/Direita" unique_id=1142313523 instance=ExtResource("4_atgmd")]
+
+[node name="FunctionTeleport" parent="XROrigin3D/Direita" unique_id=203924689 instance=ExtResource("5_mt6d6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+
+[node name="grab_collision" type="Area3D" parent="XROrigin3D/Direita" unique_id=1483641057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.73223686, 0, -0.041671753)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/Direita/grab_collision" unique_id=460353479]
+shape = SubResource("SphereShape3D_y55a8")
+
+[node name="PlayerBody" parent="XROrigin3D" unique_id=1204305038 instance=ExtResource("6_4g8tw")]
