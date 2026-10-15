@@ -21,3 +21,13 @@ exports/
 Thumbs.db
 *~
 ~*.TMP
+
+# Godot 4+ specific ignores
+.godot/
+
+# Imported asset caches
+.import/
+
+# Export options
+export.cfg
+export_presets.cfg
