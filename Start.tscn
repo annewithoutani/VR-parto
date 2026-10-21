@@ -362,13 +362,13 @@ visible = false
 prompt_message = "Pegar a Prancheta"
 
 [node name="Button2" parent="Start" unique_id=1699863328 node_paths=PackedStringArray("local_to_teleport") instance=ExtResource("3_xhal0")]
-transform = Transform3D(1.163746, 4.504985e-07, 0, -1.01737896e-07, 5.1531014, 0, 0, 0, -0.0038428737, -41.494316, 2.0999997, -9.936315)
+transform = Transform3D(2.5381067, 4.5049856e-07, 0, -2.2188831e-07, 5.153102, 0, 0, 0, -0.0038428737, -42.01938, 2.0999997, -9.936315)
 visible = false
 prompt_message = "Sala de Parto"
 local_to_teleport = NodePath("dentrto da sala")
 
 [node name="dentrto da sala" type="Marker3D" parent="Start/Button2" unique_id=1939784644]
-transform = Transform3D(1, -8.526513e-14, 0, 1.0658141e-14, 0.9999999, 0, 0, 0, 1, -7.6412544, -0.3276167, 490.6211)
+transform = Transform3D(1, -8.526513e-14, 0, 1.0658141e-14, 0.99999994, 0, 0, 0, 1, 0, -1, 100)
 
 [node name="Button3" parent="Start" unique_id=887271474 node_paths=PackedStringArray("local_to_teleport") instance=ExtResource("3_xhal0")]
 transform = Transform3D(-2.5986424e-07, 0, -0.3729354, 0, 4.9699993, 0, 5.9450016, 0, -1.6301527e-08, -47.999638, 2.5149443, -5.5456705)
@@ -377,7 +377,7 @@ prompt_message = "Corredor"
 local_to_teleport = NodePath("corredor")
 
 [node name="corredor" type="Marker3D" parent="Start/Button3" unique_id=1664393716]
-transform = Transform3D(-1.7940412e-08, -3.4421248e-15, -0.0031337128, -4.2919854e-08, 1.0774646, 0, -1.2804674, -2.45676e-07, 4.273508e-10, 0.06268406, -0.4283415, -0.4676857)
+transform = Transform3D(-1.7940412e-08, -3.4421248e-15, -0.0031337128, -4.2919854e-08, 1.0774646, 0, -1.2804674, -2.45676e-07, 4.273508e-10, 0.063, -1, -0.468)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Start" unique_id=1524382135]
 environment = SubResource("Environment_gx2gx")
@@ -431,49 +431,6 @@ transform = Transform3D(0.5462761, 0.10826078, -1.5425504, -0.036139976, 1.63642
 
 [node name="Human_rig" parent="Start/homem1" index="0" unique_id=681719644]
 transform = Transform3D(-0.7864646, -0.14746043, 0.5997721, -0.00093679497, 0.97136366, 0.23759176, -0.6176329, 0.18629579, -0.764082, -2.532124, -0.4047132, 5.563745)
-
-[node name="Skeleton3D" parent="Start/homem1/Human_rig" index="0" unique_id=1776332699]
-bones/0/rotation = Quaternion(0.4045232, 0, 0, 0.91452783)
-bones/1/rotation = Quaternion(0.73880243, 0.6718314, 0.052152697, -0.009678156)
-bones/2/rotation = Quaternion(-0.6690896, -0.60371727, 0.23664296, 0.36310425)
-bones/3/rotation = Quaternion(-0.022473795, 0.005086118, -0.010743811, 0.9996768)
-bones/4/rotation = Quaternion(0.69546497, 0.00088613585, 0.040495288, 0.71741754)
-bones/6/rotation = Quaternion(-0.5904159, -0.06677254, -0.02748981, 0.80386245)
-bones/8/rotation = Quaternion(0.73880243, -0.6718314, -0.052152697, -0.009678156)
-bones/9/rotation = Quaternion(-0.6690896, 0.60371727, -0.23664296, 0.36310425)
-bones/10/rotation = Quaternion(-0.022473795, -0.005086118, 0.010743811, 0.9996768)
-bones/11/rotation = Quaternion(0.69546497, -0.00088613585, -0.040495288, 0.71741754)
-bones/13/rotation = Quaternion(-0.5904159, 0.06677254, 0.02748981, 0.80386245)
-bones/16/rotation = Quaternion(0.43844074, 0, 0, 0.89876014)
-bones/17/rotation = Quaternion(-0.021514034, 0, 0, 0.99976856)
-bones/23/rotation = Quaternion(-0.32730612, -0.31492856, -0.0020365212, 0.89089096)
-bones/24/rotation = Quaternion(-0.47486347, -0.074774735, 0.13503163, 0.8664179)
-bones/25/rotation = Quaternion(0.020773742, 0.13131744, -0.02348202, 0.9908445)
-bones/26/rotation = Quaternion(-0.10158223, 0.21590929, -0.41823107, 0.87644)
-bones/28/rotation = Quaternion(-0.03456841, -0.049920503, -0.120543964, 0.99084926)
-bones/30/rotation = Quaternion(-0.22451769, 0.33525574, -0.03952068, 0.9141299)
-bones/33/rotation = Quaternion(0.15988527, -0.3460361, 0.12207553, 0.9164024)
-bones/37/rotation = Quaternion(-1.809368e-05, -0.34802502, 0.067229845, 0.9350716)
-bones/41/rotation = Quaternion(0.029163595, -0.33139616, 0.10833397, 0.9367976)
-bones/45/rotation = Quaternion(-0.102693446, -0.2803995, 0.033756815, 0.95377713)
-bones/49/rotation = Quaternion(-0.32730612, 0.31492856, 0.0020365212, 0.89089096)
-bones/50/rotation = Quaternion(-0.47486347, 0.074774735, -0.13503163, 0.8664179)
-bones/51/rotation = Quaternion(0.020773742, -0.13131744, 0.02348202, 0.9908445)
-bones/52/rotation = Quaternion(-0.10158223, -0.21590929, 0.41823107, 0.87644)
-bones/54/rotation = Quaternion(-0.03456841, 0.049920503, 0.120543964, 0.99084926)
-bones/55/rotation = Quaternion(0.20480382, 0.8601671, -0.46240798, -0.06593146)
-bones/56/rotation = Quaternion(-0.22451769, -0.33525574, 0.03952068, 0.9141299)
-bones/59/rotation = Quaternion(0.15988527, 0.3460361, -0.12207553, 0.9164024)
-bones/63/rotation = Quaternion(-1.809368e-05, 0.34802502, -0.067229845, 0.9350716)
-bones/67/rotation = Quaternion(0.029163595, 0.33139616, -0.10833397, 0.9367976)
-bones/71/rotation = Quaternion(-0.102693446, 0.2803995, -0.033756815, 0.95377713)
-bones/92/rotation = Quaternion(-0.6143604, 0.67425203, -0.14802334, -0.3821448)
-bones/97/rotation = Quaternion(0.81235904, 0.25669613, 0.25815642, -0.4555603)
-bones/101/rotation = Quaternion(0.81235915, -0.25669613, -0.25815648, -0.45556033)
-bones/113/rotation = Quaternion(0.97413623, 0.20378461, -0.0016527546, -0.09761007)
-bones/114/rotation = Quaternion(0.97413623, -0.2037846, 0.0016527603, -0.097610064)
-bones/128/rotation = Quaternion(0.2512976, 0.6820037, 0.68588156, -0.035874855)
-bones/132/rotation = Quaternion(-0.5273335, 0.6858857, -0.49404836, -0.08600214)
 
 [node name="AnimationPlayer" parent="Start/homem1" index="1" unique_id=1244864565]
 autoplay = &"sentado"
