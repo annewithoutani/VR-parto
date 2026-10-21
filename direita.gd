@@ -6,8 +6,11 @@ var activePointedObject = null
 var lastRCButton : StaticBody3D
 var birth_started := false
 var clipboard_instruction_started := false
+# ----------------------- DEBUG -----------------------
 var _debug_control: Control
 var _pranch_local := Transform3D.IDENTITY
+var _pranch_offset := Vector3(0.14, -0.30, -0.5)
+# --------------------- FIM DEBUG ---------------------
 
 @onready var button_prancheta_mesa: Interactable = $"../../Start/Button"
 @onready var button_2: Interactable = $"../../Start/Button2"
@@ -154,8 +157,7 @@ func _process(delta: float) -> void:
 	var cam: XRCamera3D = $"../XRCamera3D"
 
 	# Prancheta "na mão": no PC não há controle, então ela fica à frente da câmera
-	pranch.global_transform = cam.global_transform * Transform3D(Basis(), Vector3(0.14, -0.45, -0.3)) * _pranch_local
-
+	pranch.global_transform = cam.global_transform * Transform3D(Basis(), _pranch_offset) * _pranch_local
 	if is_instance_valid(_debug_control):
 		_debug_control.queue_redraw()
 
@@ -175,6 +177,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not OS.is_debug_build():
 		return
 	if event is InputEventMouseButton and event.is_pressed():
+		if event.button_index == MOUSE_BUTTON_WHEEL_UP or event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			var passo := 0.05 if event.button_index == MOUSE_BUTTON_WHEEL_UP else -0.05
+			if event.shift_pressed:
+				_pranch_offset.y += passo   # Shift + roda: sobe/desce
+			else:
+				_pranch_offset.z += passo   # roda: aproxima/afasta
+			print("Offset da prancheta: ", _pranch_offset)
+			return
 		var alvo := _mirar()
 		if alvo.is_empty():
 			return
