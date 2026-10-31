@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://hb0fi67puum6"]
+
+[resource]
+resource_name = "Human.high-poly"
+transparency = 4
+cull_mode = 2
+roughness = 0.7

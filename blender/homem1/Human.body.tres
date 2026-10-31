@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dytbir8eht7xo"]
+
+[resource]
+resource_name = "Human.body"
+transparency = 4
+cull_mode = 2
+roughness = 0.7
