@@ -1,7 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://brfqe3l5nqac3"]
 
+[ext_resource type="Texture2D" uid="uid://clpe2oep63pqh" path="res://blender/mulher1_ShiftDress.png" id="1_tjb4r"]
+
 [resource]
 resource_name = "Human.toigo_shift_dress"
-transparency = 4
 cull_mode = 2
+albedo_texture = ExtResource("1_tjb4r")
 roughness = 0.7

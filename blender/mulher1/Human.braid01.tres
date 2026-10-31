@@ -1,7 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://csf4s2gi86xti"]
 
+[ext_resource type="Texture2D" uid="uid://b3tx1b7jgxlb6" path="res://blender/mulher1_braid01_diffuse.png" id="1_cv45w"]
+
 [resource]
 resource_name = "Human.braid01"
-transparency = 4
 cull_mode = 2
+albedo_texture = ExtResource("1_cv45w")
 roughness = 0.7

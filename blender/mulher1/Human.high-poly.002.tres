@@ -1,7 +1,10 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dnw8u284ikg2t"]
 
+[ext_resource type="Texture2D" uid="uid://bq81h4gh87btc" path="res://blender/mulher1_brown_eye.png" id="1_cqn77"]
+
 [resource]
 resource_name = "Human.high-poly.002"
-transparency = 4
+transparency = 1
 cull_mode = 2
+albedo_texture = ExtResource("1_cqn77")
 roughness = 0.7

@@ -1,7 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://ukh4gl3jgdvx"]
 
+[ext_resource type="Texture2D" uid="uid://bbfjaygt1qqrc" path="res://blender/mulher1_eyebrow001.png" id="1_c8oor"]
+
 [resource]
 resource_name = "Human.eyebrow004"
-transparency = 4
 cull_mode = 2
+albedo_texture = ExtResource("1_c8oor")
 roughness = 0.7
