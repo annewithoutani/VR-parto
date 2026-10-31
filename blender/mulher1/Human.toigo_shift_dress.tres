@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://brfqe3l5nqac3"]
+
+[resource]
+resource_name = "Human.toigo_shift_dress"
+transparency = 4
+cull_mode = 2
+roughness = 0.7
