@@ -1,7 +1,10 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://hb0fi67puum6"]
 
+[ext_resource type="Texture2D" uid="uid://xr83lk5c6yw2" path="res://blender/homem1_brown_eye.png" id="1_wxkho"]
+
 [resource]
 resource_name = "Human.high-poly"
-transparency = 4
+transparency = 1
 cull_mode = 2
+albedo_texture = ExtResource("1_wxkho")
 roughness = 0.7

@@ -1,7 +1,12 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dpk42n12mhd3c"]
 
+[ext_resource type="Texture2D" uid="uid://c4j2rgh7botof" path="res://blender/homem1_shoes01_diffuse.png" id="1_4yfjm"]
+[ext_resource type="Texture2D" uid="uid://j3lqmmcrnko2" path="res://blender/homem1_shoes01_normal.png" id="2_vbw23"]
+
 [resource]
 resource_name = "Human.shoes01"
-transparency = 4
 cull_mode = 2
+albedo_texture = ExtResource("1_4yfjm")
 roughness = 0.7
+normal_enabled = true
+normal_texture = ExtResource("2_vbw23")

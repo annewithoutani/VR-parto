@@ -1,7 +1,15 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://b8dnjjokum0sk"]
 
+[ext_resource type="Texture2D" uid="uid://bvjl1axcwwdin" path="res://blender/homem1_male_casualsuit01_diffuse.png" id="1_hlh47"]
+[ext_resource type="Texture2D" uid="uid://b0hru4vj0dt6q" path="res://blender/homem1_male_casualsuit01_normal.png" id="2_2kkve"]
+
 [resource]
 resource_name = "Human.male_casualsuit01"
-transparency = 4
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 cull_mode = 2
+albedo_texture = ExtResource("1_hlh47")
 roughness = 0.7
+normal_enabled = true
+normal_texture = ExtResource("2_2kkve")
