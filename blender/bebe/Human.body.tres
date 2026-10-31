@@ -1,7 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://nplni56gea4g"]
 
+[ext_resource type="Texture2D" uid="uid://b2v01bpnamp48" path="res://blender/bebe_middleage_lightskinned_female_diffuse.png" id="1_fjfy4"]
+
 [resource]
 resource_name = "Human.body"
-transparency = 4
 cull_mode = 2
+albedo_texture = ExtResource("1_fjfy4")
 roughness = 0.7
