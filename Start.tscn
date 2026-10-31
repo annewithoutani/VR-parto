@@ -429,14 +429,14 @@ transform = Transform3D(0.002445019, 7.2162077e-12, -0.001738355, 1.8002323e-18,
 [node name="homem1" parent="Start" unique_id=1580281409 instance=ExtResource("37_gvpdn")]
 transform = Transform3D(0.5462761, 0.10826078, -1.5425504, -0.036139976, 1.6364228, 0.102050476, 1.5459225, 0, 0.5474703, -35.597363, -0.5748947, -18.541908)
 
-[node name="Human_rig" parent="Start/homem1" index="0" unique_id=681719644]
+[node name="Human_rig" parent="Start/homem1" index="0" unique_id=1287530368]
 transform = Transform3D(-0.7864646, -0.14746043, 0.5997721, -0.00093679497, 0.97136366, 0.23759176, -0.6176329, 0.18629579, -0.764082, -2.532124, -0.4047132, 5.563745)
 
-[node name="AnimationPlayer" parent="Start/homem1" index="1" unique_id=1244864565]
+[node name="AnimationPlayer" parent="Start/homem1" index="1" unique_id=476494375]
 autoplay = &"sentado"
 
 [node name="bebe" parent="Start" unique_id=96940847 instance=ExtResource("38_sr8he")]
-transform = Transform3D(-0.7218347, 0.007592347, -0.013432815, -0.01252242, 0.078986414, 0.71755683, 0.009015164, 0.7176261, -0.07883668, -22.236025, 1.1716331, -10.697637)
+transform = Transform3D(-0.4114458, 0.0043276376, -0.007656704, -0.007137779, 0.045022257, 0.4090074, 0.0051386436, 0.40904686, -0.044936907, -12.674534, 0.6678309, -6.097653)
 top_level = true
 script = ExtResource("31_fdysf")
 
@@ -454,10 +454,10 @@ transform = Transform3D(0.3833333, 0, 0, 0, 0.3833333, 0, 0, 0, 0.3833333, -40.5
 [node name="door2" parent="Start" unique_id=226172864 instance=ExtResource("38_p10xe")]
 transform = Transform3D(-1.6756031e-08, 0, 0.3833333, 0, 0.3833333, 0, -0.3833333, 0, -1.6756031e-08, -47.986866, 0, -8.185636)
 
-[node name="Cube" parent="Start/door2" index="0" unique_id=938388390]
+[node name="Cube" parent="Start/door2" index="0" unique_id=1450296675]
 visible = false
 
-[node name="Door" parent="Start/door2" index="1" unique_id=173943601]
+[node name="Door" parent="Start/door2" index="1" unique_id=1894519073]
 visible = false
 
 [node name="lavatorio" parent="Start" unique_id=398977055 instance=ExtResource("41_smn4x")]
