@@ -464,7 +464,7 @@ visible = false
 transform = Transform3D(-1.4861873e-09, 0.034, 1.4861873e-09, 0, -1.4861873e-09, 0.034, 0.034, 1.4861873e-09, 6.496331e-17, -33.429512, 1.3509787, -1.3058214)
 
 [node name="prancheta" parent="Start" unique_id=1143127540 instance=ExtResource("6_dsitw")]
-transform = Transform3D(-1.3742861e-07, -1.3742864e-07, -3.1440005, -3.1431692, 0.0722615, 1.3423363e-07, 0.0722615, 3.1431692, -1.4055098e-07, -38.944866, 3.309615, -9.94354)
+transform = Transform3D(-1.747543e-07, -1.7087415e-07, -4, -3.9989433, 0.09193595, 1.7078078e-07, 0.09193595, 3.9989433, -1.7484555e-07, -38.944866, 3.309615, -9.94354)
 
 [node name="mesa1" parent="Start" unique_id=2081915000 instance=ExtResource("42_dsitw")]
 transform = Transform3D(0.19298245, 0, 0, 0, -8.435531e-09, 0.19298245, 0, -0.19298245, -8.435531e-09, -37.703243, 0.27579057, -11.001932)
@@ -557,7 +557,7 @@ transform = Transform3D(-0.028172042, 0, 0.6938727, 0, 0.69444436, 0, -0.6938727
 shape = SubResource("SphereShape3D_gvpdn")
 
 [node name="PRANCH" parent="XROrigin3D/Direita/RightHand" unique_id=1591246654 instance=ExtResource("6_dsitw")]
-transform = Transform3D(-0.0060006045, 0.0035405569, -1.278981, -1.0691636, 0.7019132, 0.006959284, 0.7019221, 1.0691805, -0.00033342838, -0.14234829, 0.2721913, -0.17575073)
+transform = Transform3D(-0.014074989, 0.008304549, -2.9999554, -2.507811, 1.6463953, 0.01632357, 1.646416, 2.5078502, -0.00078225177, -0.14234829, 0.2721913, -0.17575073)
 visible = false
 
 [node name="FunctionTeleport" parent="XROrigin3D/Direita" unique_id=953664045 instance=ExtResource("34_5lffa")]
