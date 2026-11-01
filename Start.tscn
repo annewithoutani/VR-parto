@@ -353,11 +353,11 @@ transform = Transform3D(1, 0, 0, 0, 0.07015691, -0.997536, 0, 0.997536, 0.070156
 omni_range = 20.0
 
 [node name="Button" parent="Start" unique_id=62503752 instance=ExtResource("3_xhal0")]
-transform = Transform3D(1, 0, 0, 0, 0.18694443, 0, 0, 0, 0.08572832, -38.939175, 2.4079983, -9.939197)
+transform = Transform3D(1.2915266, 0, 0, 0, 0.18694443, 0, 0, 0, 0.08572832, -38.939175, 2.4079983, -9.939197)
 prompt_message = "Pegar a Prancheta"
 
 [node name="btn_prancheta" parent="Start" unique_id=769972517 instance=ExtResource("3_xhal0")]
-transform = Transform3D(1.0658377, 0, 0, 0, 1.4463311, 0, 0, 0, 0.122875534, -38.939175, 2.7640111, -9.939197)
+transform = Transform3D(1.1234046, 0, 0, 0, 1.6713414, 0, 0, 0, 0.122875534, -38.939175, 2.655023, -9.939197)
 visible = false
 prompt_message = "Pegar a Prancheta"
 
@@ -464,7 +464,7 @@ visible = false
 transform = Transform3D(-1.4861873e-09, 0.034, 1.4861873e-09, 0, -1.4861873e-09, 0.034, 0.034, 1.4861873e-09, 6.496331e-17, -33.429512, 1.3509787, -1.3058214)
 
 [node name="prancheta" parent="Start" unique_id=1143127540 instance=ExtResource("6_dsitw")]
-transform = Transform3D(-1.747543e-07, -1.7087415e-07, -4, -3.9989433, 0.09193595, 1.7078078e-07, 0.09193595, 3.9989433, -1.7484555e-07, -38.944866, 3.309615, -9.94354)
+transform = Transform3D(-2.1844288e-07, -2.1359268e-07, -5, -4.998679, 0.11491993, 2.1347597e-07, 0.11491993, 4.998679, -2.1855695e-07, -38.945, 3.51, -9.944)
 
 [node name="mesa1" parent="Start" unique_id=2081915000 instance=ExtResource("42_dsitw")]
 transform = Transform3D(0.19298245, 0, 0, 0, -8.435531e-09, 0.19298245, 0, -0.19298245, -8.435531e-09, -37.703243, 0.27579057, -11.001932)
@@ -557,7 +557,7 @@ transform = Transform3D(-0.028172042, 0, 0.6938727, 0, 0.69444436, 0, -0.6938727
 shape = SubResource("SphereShape3D_gvpdn")
 
 [node name="PRANCH" parent="XROrigin3D/Direita/RightHand" unique_id=1591246654 instance=ExtResource("6_dsitw")]
-transform = Transform3D(-0.014074989, 0.008304549, -2.9999554, -2.507811, 1.6463953, 0.01632357, 1.646416, 2.5078502, -0.00078225177, -0.14234829, 0.2721913, -0.17575073)
+transform = Transform3D(-0.023458313, 0.013840916, -4.9999256, -4.179685, 2.7439923, 0.027205952, 2.7440264, 4.1797504, -0.0013037529, -0.14234829, 0.2721913, -0.17575073)
 visible = false
 
 [node name="FunctionTeleport" parent="XROrigin3D/Direita" unique_id=953664045 instance=ExtResource("34_5lffa")]
