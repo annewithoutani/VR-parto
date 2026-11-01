@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://2a2ol1d60pe7" path="res://blender/hamper.blend" id="8_smn4x"]
 [ext_resource type="AudioStream" uid="uid://cshl0j0e8oif1" path="res://sons/dor.mp3" id="9_3vvga"]
 [ext_resource type="AudioStream" uid="uid://dk2u1i1rqfe4j" path="res://sons/bem-vindo-ao-estagio.mp3" id="9_7mm7g"]
-[ext_resource type="AudioStream" uid="uid://dm8h53k232we" path="res://sons/batimento.mp3" id="9_vds3v"]
+[ext_resource type="AudioStream" uid="uid://cf6jynjkpkqu4" path="res://sons/batimento_140.mp3" id="9_fdysf"]
 [ext_resource type="AudioStream" uid="uid://k66ehtkg655k" path="res://sons/certifique-que-esta-preparado.mp3" id="10_jdxo2"]
 [ext_resource type="Script" uid="uid://ce6c44sdg4ub3" path="res://audio_stream_player_3d_3.gd" id="10_xye84"]
 [ext_resource type="Script" uid="uid://c8fduadc6okim" path="res://audio_stream_player_2.gd" id="11_mgjkx"]
@@ -283,7 +283,7 @@ script = ExtResource("10_xye84")
 
 [node name="batimento" type="AudioStreamPlayer3D" parent="Start" unique_id=2139148229]
 transform = Transform3D(-1.7148618, 0, 0.37029618, 0, 1.754386, 0, -0.37029618, 0, -1.7148618, -38.54525, 1.9325982, -18.530909)
-stream = ExtResource("9_vds3v")
+stream = ExtResource("9_fdysf")
 max_db = 6.0
 autoplay = true
 panning_strength = 2.8
