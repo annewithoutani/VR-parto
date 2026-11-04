@@ -413,7 +413,48 @@ size = Vector3(76.79524, 105.31201, 194.36656)
 transform = Transform3D(0.2626794, 0, 2.375521, 0, 2.39, 0, -2.375521, 0, 0.2626794, -38.907463, -9.536743e-07, -18.732716)
 
 [node name="mulher1" parent="Start/hospital bed" unique_id=1056274586 instance=ExtResource("6_b54qk")]
-transform = Transform3D(-0.01732403, 0.9747466, -0.06382148, -0.01231515, 0.06360851, 0.97483677, 0.9767561, 0.018090338, 0.011158994, -0.7615938, 0.8368201, -0.021748304)
+transform = Transform3D(0.14716776, 0.3595897, -0.8964041, -0.11312235, 0.9069274, 0.345239, 0.9591916, 0.051787037, 0.1782501, -0.050165176, 0.12611665, 0.07918167)
+
+[node name="Human_rig" parent="Start/hospital bed/mulher1" index="0" unique_id=2094465142]
+transform = Transform3D(0.9994517, 0.019284483, -0.026878905, -0.02491175, 0.97335196, -0.22796147, 0.021766506, 0.22850646, 0.97329915, -0.14637756, 0.17852259, -0.40959454)
+
+[node name="Skeleton3D" parent="Start/hospital bed/mulher1/Human_rig" index="0" unique_id=965591798]
+bones/1/rotation = Quaternion(0.5749439, 0.5517169, -0.3575597, 0.48703077)
+bones/2/rotation = Quaternion(0.5712014, 0.7133647, -0.24512678, -0.3236552)
+bones/3/rotation = Quaternion(0.036424834, 0.11935818, -0.09599812, 0.9875279)
+bones/4/rotation = Quaternion(0.4468991, 0.09184133, 0.11521575, 0.88236713)
+bones/9/rotation = Quaternion(-0.5776293, 0.8118409, 0.054487757, -0.06549647)
+bones/10/rotation = Quaternion(0.04412677, -0.10714168, 0.10232839, 0.98797894)
+bones/11/rotation = Quaternion(0.3828021, -0.044967912, -0.13696127, 0.91251415)
+bones/15/rotation = Quaternion(0.9529747, 0, 0, -0.30305016)
+bones/16/rotation = Quaternion(0.40844998, 0, 0, 0.9127807)
+bones/17/rotation = Quaternion(-0.1647282, 0, 0, 0.986339)
+bones/21/rotation = Quaternion(0.016821388, 0, 0, 0.99985856)
+bones/23/rotation = Quaternion(-0.331225, -0.39110816, 0.17426056, 0.8408078)
+bones/24/rotation = Quaternion(-0.29489493, 0.16494974, -0.1675228, 0.9261559)
+bones/25/rotation = Quaternion(-0.1546818, 0.11216514, 0.047002453, 0.9804506)
+bones/26/rotation = Quaternion(-0.24145348, 0.0080840355, -0.15552185, 0.957835)
+bones/27/rotation = Quaternion(0.016915055, 0.068080455, -0.08171904, 0.9941836)
+bones/28/rotation = Quaternion(0.07884189, 0.05163888, -0.15848197, 0.9828535)
+bones/29/rotation = Quaternion(-0.04487963, 0.92123383, -0.35019627, -0.16332996)
+bones/49/rotation = Quaternion(-0.33134165, 0.38699162, -0.16951996, 0.84363097)
+bones/50/rotation = Quaternion(-0.29916847, -0.3218449, 0.059631713, 0.89630246)
+bones/52/rotation = Quaternion(-0.22757956, 0.0177166, 0.24405546, 0.942513)
+bones/53/rotation = Quaternion(-0.008788103, -0.05281463, 0.03783482, 0.9978487)
+bones/54/rotation = Quaternion(-0.07347963, 0.07918176, 0.22606921, 0.96810323)
+bones/55/rotation = Quaternion(0.20285949, 0.84981996, -0.48642924, -0.006391739)
+bones/74/rotation = Quaternion(0.25298506, 0.006929096, 0.009411753, 0.9673996)
+bones/75/rotation = Quaternion(0.03160641, -0.010770366, -0.008572439, 0.9994057)
+bones/77/rotation = Quaternion(-0.34340525, 0.01399241, 0.012019824, 0.9390062)
+bones/82/rotation = Quaternion(0.40020412, 0.7743771, 0.22160386, -0.43711385)
+bones/92/rotation = Quaternion(-0.60193825, 0.6637692, -0.19069713, -0.40089333)
+bones/96/rotation = Quaternion(-0.6720131, 0.7305649, 0.036498066, -0.11550403)
+bones/97/rotation = Quaternion(0.84674007, 0.22632733, 0.23631348, -0.41947958)
+bones/101/rotation = Quaternion(0.84674007, -0.22632733, -0.23631349, -0.41947958)
+bones/120/rotation = Quaternion(-0.47618875, 0.5923631, 0.618501, -0.19951637)
+bones/122/rotation = Quaternion(0.07376543, 0.7609374, -0.6146338, -0.19431545)
+bones/128/rotation = Quaternion(0.06654937, 0.6730379, 0.702735, -0.2208048)
+bones/132/rotation = Quaternion(-0.48894992, 0.7403976, -0.45993105, -0.03468412)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Start/hospital bed" unique_id=81416100]
 transform = Transform3D(0.9999999, 0, -1.4901161e-08, 0, 0.9999999, 0, 1.4901161e-08, 0, 0.9999999, -0.035966396, 0.3348083, -0.0009784698)
@@ -624,7 +665,6 @@ texture = ExtResource("2_smn4x")
 
 [node name="color" type="Sprite3D" parent="XROrigin3D/XRCamera3D" unique_id=403090926]
 transform = Transform3D(6.329005, 0, -4.656613e-10, 0, 892.55, 0, 8.940697e-08, 0, 0.073, -0.13044977, -0.23726177, -3.4527264)
-visible = false
 modulate = Color(1, 1, 1, 0.85490197)
 no_depth_test = true
 texture = SubResource("GradientTexture1D_fkr0a")
