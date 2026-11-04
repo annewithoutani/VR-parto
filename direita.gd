@@ -115,7 +115,6 @@ func _start_birth_sequence() -> void:
 		return
 
 	birth_started = true
-	bebe.show()
 	if bebe.has_method("start_birth_sequence"):
 		bebe.call("start_birth_sequence")
 

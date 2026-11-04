@@ -29,3 +29,4 @@ func start_birth_sequence() -> void:
 		Vector3(-22.236, 1.288, -10.38),
 		2.0
 	)
+	bebe.show()
