@@ -368,22 +368,22 @@ visible = false
 prompt_message = "Pegar a Prancheta"
 
 [node name="Button2" parent="Start" unique_id=1699863328 node_paths=PackedStringArray("local_to_teleport") instance=ExtResource("3_xhal0")]
-transform = Transform3D(2.5381067, 4.5049856e-07, 0, -2.2188831e-07, 5.153102, 0, 0, 0, -0.0038428737, -42.01938, 2.0999997, -9.936315)
+transform = Transform3D(0.5195019, 7.733585e-08, 0, -4.5416304e-08, 0.8846189, 0, 0, 0, -0.0038428737, -43.08233, 2.3313692, -9.668479)
 visible = false
 prompt_message = "Sala de Parto"
 local_to_teleport = NodePath("dentrto da sala")
 
 [node name="dentrto da sala" type="Marker3D" parent="Start/Button2" unique_id=1939784644]
-transform = Transform3D(1, -8.526513e-14, 0, 1.0658141e-14, 0.99999994, 0, 0, 0, 1, 0, -1, 100)
+transform = Transform3D(1, -5.684342e-14, 0, 1.0658141e-14, 0.9999999, 0, 0, 0, 0.9999999, -0.63601685, -4.436993, 776.6255)
 
 [node name="Button3" parent="Start" unique_id=887271474 node_paths=PackedStringArray("local_to_teleport") instance=ExtResource("3_xhal0")]
-transform = Transform3D(-2.5986424e-07, 0, -0.3729354, 0, 4.9699993, 0, 5.9450016, 0, -1.6301527e-08, -47.999638, 2.5149443, -5.5456705)
+transform = Transform3D(-3.7449226e-08, 0, -0.58113086, 0, 0.747369, 0, 0.85673857, 0, -2.540204e-08, -48.07395, 2.1756568, -5.4685354)
 visible = false
 prompt_message = "Corredor"
 local_to_teleport = NodePath("corredor")
 
 [node name="corredor" type="Marker3D" parent="Start/Button3" unique_id=1664393716]
-transform = Transform3D(-1.7940412e-08, -3.4421248e-15, -0.0031337128, -4.2919854e-08, 1.0774646, 0, -1.2804674, -2.45676e-07, 4.273508e-10, 0.063, -1, -0.468)
+transform = Transform3D(-1.7940438e-08, -3.4421246e-15, -0.0031337128, -4.2919854e-08, 1.0774643, 0, -1.2804675, -2.4567603e-07, 4.273508e-10, -0.13220453, -4.817704, -0.77523804)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Start" unique_id=1524382135]
 environment = SubResource("Environment_gx2gx")
@@ -552,8 +552,9 @@ use_collision = true
 size = Vector3(1.3829651, 2.428955, 0.50860596)
 
 [node name="bebe" parent="Start" unique_id=96940847 instance=ExtResource("38_sr8he")]
-transform = Transform3D(-0.8997944, 0.0094641205, -0.016744515, -0.015609673, 0.09845954, 0.89446187, 0.011237718, 0.894548, -0.09827291, -12.675, 0.7, -6.098)
+transform = Transform3D(-0.8997944, 0.0094641205, -0.016744515, -0.015609673, 0.09845954, 0.89446187, 0.011237718, 0.894548, -0.09827291, -22.178146, 1.2962449, -11.590425)
 top_level = true
+visible = false
 script = ExtResource("31_fdysf")
 
 [node name="choro bebe" type="AudioStreamPlayer3D" parent="Start/bebe" unique_id=1593844875]
