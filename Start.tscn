@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dt00cqh6t2qru"]
 
+[ext_resource type="Script" uid="uid://vo0kkuebxdou" path="res://sala_de_parto.gd" id="1_8r10p"]
 [ext_resource type="Texture2D" uid="uid://ph5ew4vfrxhc" path="res://texture/wall/beige_wall_001_diff_4k.png" id="1_jdxo2"]
 [ext_resource type="Texture2D" uid="uid://derdvqgnky7l8" path="res://texture/wall/beige_wall_001_nor_gl_4k.png" id="2_ox2yh"]
 [ext_resource type="Texture2D" uid="uid://bjn5km4lcc7uh" path="res://Image/roupa-priv.png" id="2_smn4x"]
@@ -179,6 +180,17 @@ albedo_texture = ExtResource("30_gfgm6")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkr0a"]
 albedo_color = Color(0.72037584, 0.9999998, 0.99700314, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8r10p"]
+albedo_color = Color(1, 0.49748617, 0.47316623, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tu74e"]
+radius = 0.20019531
+height = 1.415741
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nd61g"]
+vertex_color_is_srgb = true
+albedo_color = Color(0.3599284, 0.7844335, 0.79441106, 1)
+
 [sub_resource type="Gradient" id="Gradient_gc3c6"]
 offsets = PackedFloat32Array(0.9958159, 1)
 
@@ -190,6 +202,7 @@ width = 213
 
 [node name="Start" type="Node3D" parent="." unique_id=1247091342]
 transform = Transform3D(0.57, 0, 0, 0, 0.57, 0, 0, 0, 0.57, 0, 0, 0)
+script = ExtResource("1_8r10p")
 
 [node name="Sprite3D" type="Sprite3D" parent="Start" unique_id=1568165953]
 transform = Transform3D(-0.02991162, 0, 0.5254651, 0, 0.52631575, 0, -0.5254651, 0, -0.02991162, -48.581474, 3.5673409, -6.8461466)
@@ -288,12 +301,11 @@ volume_db = -8.819
 script = ExtResource("10_xye84")
 
 [node name="batimento" type="AudioStreamPlayer3D" parent="Start" unique_id=2139148229]
-transform = Transform3D(-1.7148618, 0, 0.37029618, 0, 1.754386, 0, -0.37029618, 0, -1.7148618, -38.54525, 1.9325982, -18.530909)
+transform = Transform3D(-0.97747123, 0, 0.21106888, 0, 1, 0, -0.21106888, 0, -0.97747123, -22.216, 1.472, -11.428)
+top_level = true
 stream = ExtResource("9_fdysf")
 max_db = 6.0
-autoplay = true
 panning_strength = 2.8
-script = ExtResource("10_xye84")
 
 [node name="aud1" type="AudioStreamPlayer" parent="Start" unique_id=1376783639]
 stream = ExtResource("9_7mm7g")
@@ -415,7 +427,12 @@ transform = Transform3D(0.2626794, 0, 2.375521, 0, 2.39, 0, -2.375521, 0, 0.2626
 [node name="mulher1" parent="Start/hospital bed" unique_id=1056274586 instance=ExtResource("6_b54qk")]
 transform = Transform3D(0.14716776, 0.3595897, -0.8964041, -0.11312235, 0.9069274, 0.345239, 0.9591916, 0.051787037, 0.1782501, -0.050165176, 0.12611665, 0.07918167)
 
-[node name="Human_rig" parent="Start/hospital bed/mulher1" index="0" unique_id=2094465142]
+[node name="btn_barriga" parent="Start/hospital bed/mulher1" unique_id=1501922604 instance=ExtResource("3_xhal0")]
+transform = Transform3D(0.2083228, -0.029699188, -0.012555815, -0.0017321575, 0.064523816, -0.40565434, 0.021610426, 0.29147002, 0.08852179, -0.18993568, 1.1215587, -0.24469185)
+visible = false
+prompt_message = "Ouvir o coração"
+
+[node name="Human_rig" parent="Start/hospital bed/mulher1" index="1" unique_id=2094465142]
 transform = Transform3D(0.9994517, 0.019284483, -0.026878905, -0.02491175, 0.97335196, -0.22796147, 0.021766506, 0.22850646, 0.97329915, -0.14637756, 0.17852259, -0.40959454)
 
 [node name="Skeleton3D" parent="Start/hospital bed/mulher1/Human_rig" index="0" unique_id=965591798]
@@ -484,8 +501,8 @@ size = Vector3(0.11645508, 4, 1)
 material = SubResource("StandardMaterial3D_5lqkp")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Start" unique_id=26118641]
-transform = Transform3D(-1.9670125e-08, -0.44999996, -1.9670125e-08, 0, -1.9670125e-08, 0.44999996, -0.44999996, 1.9670125e-08, 8.598084e-16, -41.8804, 4.0749383, -9.985879)
-size = Vector3(0.11645508, 4, 1)
+transform = Transform3D(-1.9670125e-08, -0.44999996, -1.9670125e-08, 0, -1.9670125e-08, 0.44999996, -0.44999996, 1.9670125e-08, 8.598084e-16, -41.88183, 3.5447006, -9.985879)
+size = Vector3(0.11645508, 3.460968, 3.7426758)
 material = SubResource("StandardMaterial3D_fkr0a")
 
 [node name="balanca" parent="Start" unique_id=1455786711 instance=ExtResource("36_dsitw")]
@@ -554,6 +571,7 @@ size = Vector3(1.3829651, 2.428955, 0.50860596)
 [node name="bebe" parent="Start" unique_id=96940847 instance=ExtResource("38_sr8he")]
 transform = Transform3D(-1.1997257, 0.012618828, -0.022326019, -0.022237465, 0.008486636, 1.1997639, 0.01277423, 1.1999035, -0.008250859, -22.178146, 1.3855743, -11.57938)
 top_level = true
+visible = false
 script = ExtResource("31_fdysf")
 
 [node name="choro bebe" type="AudioStreamPlayer3D" parent="Start/bebe" unique_id=1593844875]
@@ -566,6 +584,18 @@ transform = Transform3D(0.3833333, 0, 0, 0, 0.3833333, 0, 0, 0, 0.3833333, -40.5
 
 [node name="door3" parent="Start" unique_id=1851823879 instance=ExtResource("37_sr8he")]
 transform = Transform3D(0.3833333, 0, 0, 0, 0.3833333, 0, 0, 0, 0.3833333, -40.529495, 3.9736426e-07, -10.035414)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Start/door3" unique_id=407882025]
+transform = Transform3D(-5.1313375e-08, -1.1739131, -8.025521e-08, 0, -5.1313375e-08, 1.8360255, -1.1739131, 5.1313375e-08, 3.5080666e-15, -3.5047455, 5.360305, 0.12922287)
+size = Vector3(0.11645508, 3.3289795, 1)
+material = SubResource("StandardMaterial3D_8r10p")
+
+[node name="Label3D" type="Label3D" parent="Start/door3/CSGBox3D3" unique_id=5744710]
+transform = Transform3D(-8.742278e-08, 4.371139e-08, -2.4462264, -1, 4.3711385e-08, 2.138559e-07, 4.3711392e-08, 0.99999994, 1.0692795e-07, -0.07321739, 0, 0)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0.8776157, 0.8776158, 0.8776157, 1)
+text = "PPP 01"
+font_size = 132
 
 [node name="door2" parent="Start" unique_id=226172864 instance=ExtResource("38_p10xe")]
 transform = Transform3D(-1.6756031e-08, 0, 0.3833333, 0, 0.3833333, 0, -0.3833333, 0, -1.6756031e-08, -47.986866, 0, -8.185636)
@@ -591,11 +621,24 @@ transform = Transform3D(-2.1844288e-07, -2.1359268e-07, -5, -4.998679, 0.1149199
 [node name="mesa1" parent="Start" unique_id=2081915000 instance=ExtResource("42_dsitw")]
 transform = Transform3D(0.19298245, 0, 0, 0, -8.435531e-09, 0.19298245, 0, -0.19298245, -8.435531e-09, -37.703243, 0.27579057, -11.001932)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Start/mesa1" unique_id=1544456600]
+[node name="hitbox" type="CSGBox3D" parent="Start/mesa1" unique_id=1544456600]
 transform = Transform3D(1, 0, 0, 0, 1, -2.6894043e-12, 0, 2.6894043e-12, 1, -0.0055999756, -0.7568474, 4.2846985)
 visible = false
 use_collision = true
 size = Vector3(14.968838, 8.482681, 9.569397)
+
+[node name="Sonar" type="Node3D" parent="Start/mesa1" unique_id=308794262]
+
+[node name="Doppler" type="MeshInstance3D" parent="Start/mesa1/Sonar" unique_id=1950493395]
+transform = Transform3D(0.10999999, 0, 0, 0, -4.8082507e-09, 0.10999999, 0, -0.10999999, -4.8082507e-09, -21.51348, 1.1677669, -6.422646)
+top_level = true
+mesh = SubResource("CapsuleMesh_tu74e")
+surface_material_override/0 = SubResource("StandardMaterial3D_nd61g")
+
+[node name="btn_doppler" parent="Start/mesa1/Sonar" unique_id=1245861682 instance=ExtResource("3_xhal0")]
+transform = Transform3D(0.5613891, 0, 0, 0, 1.3526582, -3.5527137e-15, 0, 1.4210855e-14, 0.39085838, -0.20573425, 1.3776779, 9.214949)
+visible = false
+prompt_message = "Pegar o Doppler"
 
 [node name="mesa2" parent="Start" unique_id=1209144559 instance=ExtResource("42_dsitw")]
 transform = Transform3D(0.016957087, -0.192236, -8.402902e-09, 0, -8.435531e-09, 0.19298245, -0.192236, -0.016957087, -7.4121786e-10, -46.17002, 0.27579057, -15.698769)
@@ -632,6 +675,15 @@ transform = Transform3D(-0.09836147, 0, -0.011225832, 0, 0.099, 0, 0.011225832, 
 
 [node name="gaze6" parent="Start" unique_id=1646023903 instance=ExtResource("38_8r10p")]
 transform = Transform3D(-0.09836147, 0, -0.011225832, 0, 0.099, 0, 0.011225832, 0, -0.09836147, -45.92788, 2.125416, -14.875231)
+
+[node name="TimerEspera" type="Timer" parent="Start" unique_id=547206957]
+one_shot = true
+
+[node name="TimerGemido" type="Timer" parent="Start" unique_id=174855625]
+one_shot = true
+
+[node name="TimerNascimento" type="Timer" parent="Start" unique_id=1997335433]
+one_shot = true
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1901430989]
 unique_name_in_owner = true
@@ -700,6 +752,17 @@ shape = SubResource("SphereShape3D_gvpdn")
 transform = Transform3D(-0.023458313, 0.013840916, -4.9999256, -4.179685, 2.7439923, 0.027205952, 2.7440264, 4.1797504, -0.0013037529, -0.14234829, 0.2721913, -0.17575073)
 visible = false
 
+[node name="DOPPLER" type="Node3D" parent="XROrigin3D/Direita/RightHand" unique_id=950429465]
+transform = Transform3D(-0.11825103, 0, -1.6156785, 0, 1.6199999, 0, 1.6156785, 0, -0.11825103, -42.966522, 2.6560953, -23.083649)
+
+[node name="Doppler2" type="MeshInstance3D" parent="XROrigin3D/Direita/RightHand/DOPPLER" unique_id=1357242152]
+transform = Transform3D(0.10999999, 0, 0, 0, -4.8082507e-09, 0.10999999, 0, -0.10999999, -4.8082507e-09, 0, 0, -0.1)
+top_level = true
+visible = false
+mesh = SubResource("CapsuleMesh_tu74e")
+skeleton = NodePath("../../../../../Start/mesa1/Sonar")
+surface_material_override/0 = SubResource("StandardMaterial3D_nd61g")
+
 [node name="FunctionTeleport" parent="XROrigin3D/Direita" unique_id=953664045 instance=ExtResource("34_5lffa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
 
@@ -723,7 +786,7 @@ transform = Transform3D(-0.012803576, 0, -0.1062312, 0, 0.107, 0, 0.1062312, 0, 
 transform = Transform3D(-0.01594604, 0, -0.23946966, 0, 0.24, 0, 0.23946966, 0, -0.01594604, -26.34461, 1.140415, -9.3470745)
 
 [connection signal="finished" from="Start/AudioStreamPlayer3D3" to="Start/AudioStreamPlayer3D3" method="_on_finished"]
-[connection signal="finished" from="Start/batimento" to="Start/batimento" method="_on_finished"]
+[connection signal="finished" from="Start/batimento" to="Start" method="_on_finished"]
 [connection signal="finished" from="Start/aud1" to="Start/aud2" method="_on_audio_stream_player_finished"]
 [connection signal="finished" from="Start/aud1" to="XROrigin3D/Direita" method="_on_aud_1_finished"]
 [connection signal="finished" from="Start/aud2" to="XROrigin3D/Direita" method="_on_aud_2_finished"]

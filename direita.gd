@@ -6,19 +6,24 @@ var activePointedObject = null
 var lastRCButton : StaticBody3D
 var birth_started := false
 var clipboard_instruction_started := false
+var segurando_doppler := false
 # ----------------------- DEBUG -----------------------
 var _debug_control: Control
 var _pranch_local := Transform3D.IDENTITY
 var _pranch_offset := Vector3(0.14, -0.30, -0.5)
 # --------------------- FIM DEBUG ---------------------
 
-@onready var button_prancheta_mesa: Interactable = $"../../Start/Button"
+@onready var bebe: Node3D = $"../../Start/bebe"
 @onready var button_2: Interactable = $"../../Start/Button2"
 @onready var button_3: Interactable = $"../../Start/Button3"
+@onready var button_prancheta_mesa: Interactable = $"../../Start/Button"
 @onready var btn_prancheta: Interactable = $"../../Start/btn_prancheta"
+@onready var btn_barriga: Interactable = $"../../Start/btn_barriga"
+@onready var btn_doppler: Interactable = $"../../Start/mesa1/Sonar/btn_doppler"
 @onready var pranch: Node3D = $RightHand/PRANCH
 @onready var prancheta: Node3D = $"../../Start/prancheta"
-@onready var bebe: Node3D = $"../../Start/bebe"
+@onready var doppler_mesa: Node3D = $"../../Start/mesa1/Sonar/Doppler"
+@onready var doppler_mao: Node3D = $RightHand/DOPPLER
 
 @onready var aud_3: AudioStreamPlayer = $"../../Start/aud3"
 @onready var mulher: AudioStreamPlayer3D = $"../../Start/AudioStreamPlayer3D3"
@@ -32,10 +37,9 @@ var _pranch_offset := Vector3(0.14, -0.30, -0.5)
 @onready var mao: Area3D = $grab_collision
 @onready var mae: Area3D = $"../../Start/Area3D"
 @onready var batimento: AudioStreamPlayer3D = $"../../Start/batimento"
+@onready var sala: Node3D = $"../../Start"
 
 #endregion
-
-
 
 func _ready() -> void:
 	adorno.modulate.a = 0
@@ -43,6 +47,7 @@ func _ready() -> void:
 	relogio.modulate.a = 0
 	roupa.modulate.a = 0
 	bebe.hide();
+	doppler_mao.hide()
 	# ----------------------- DEBUG -----------------------
 	if OS.is_debug_build():
 		var canvas = CanvasLayer.new()
@@ -56,6 +61,7 @@ func _ready() -> void:
 		_debug_control.connect("draw", Callable(self, "_desenhar_mira"))
 		_pranch_local = pranch.transform
 		pranch.top_level = true
+		doppler_mao.top_level = true
 	# --------------------- FIM DEBUG ---------------------
 	#connect("grip_click", btnPressedOnRightCntrler);
 	pass;
@@ -68,12 +74,6 @@ func _physics_process(_delta: float) -> void:
 		activePointedObject = c
 	else:
 		activePointedObject = null
-		
-	var distance_to_patient := mao.global_position.distance_to(mae.global_position)
-	if distance_to_patient < 1.0:
-		batimento.volume_db = lerpf(-60.0, 6.0, 1.0 - distance_to_patient)
-	else:
-		batimento.volume_db = -80.0
 
 func _on_button_pressed(name: String) -> void:
 	#print(mao.global_position);
@@ -84,6 +84,13 @@ func _on_button_pressed(name: String) -> void:
 	#print(activePointedObject);
 	if name=="grip_click":
 		if activePointedObject != null:
+			if activePointedObject == btn_doppler:
+				_toggle_doppler()
+				return
+			if activePointedObject == btn_barriga:
+				if segurando_doppler:
+					sala.usar_doppler()
+				return
 			if activePointedObject == button_prancheta_mesa or activePointedObject == btn_prancheta:
 				_toggle_clipboard()
 				return
@@ -108,19 +115,22 @@ func _toggle_clipboard() -> void:
 	else:
 		prancheta.show()
 		pranch.hide()
+		
 
+func _toggle_doppler() -> void:
+	segurando_doppler = not segurando_doppler
+	doppler_mesa.visible = not segurando_doppler
+	doppler_mao.visible = segurando_doppler
+	if segurando_doppler:
+		# uma mão só: a prancheta volta para a mesa
+		prancheta.show()
+		pranch.hide()
 
 func _start_birth_sequence() -> void:
 	if birth_started:
 		return
-
 	birth_started = true
-	if bebe.has_method("start_birth_sequence"):
-		bebe.call("start_birth_sequence")
-
-	await get_tree().create_timer(10.0).timeout
-	if is_inside_tree() and not mulher.playing:
-		mulher.play()
+	sala.entrar_na_sala()
 
 func _on_aud_1_finished() -> void:
 	await get_tree().create_timer(7).timeout;
@@ -157,6 +167,8 @@ func _process(delta: float) -> void:
 
 	# Prancheta "na mão": no PC não há controle, então ela fica à frente da câmera
 	pranch.global_transform = cam.global_transform * Transform3D(Basis(), _pranch_offset) * _pranch_local
+	doppler_mao.global_transform = cam.global_transform * Transform3D(Basis(), Vector3(0.14, -0.2, -0.45))
+	
 	if is_instance_valid(_debug_control):
 		_debug_control.queue_redraw()
 

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b65avwoc0llgf"]
+
+[ext_resource type="PackedScene" uid="uid://cu10fhjof20hx" path="res://Interact/Button.tscn" id="1_jngg8"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tu74e"]
+radius = 0.20019531
+height = 1.415741
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nd61g"]
+vertex_color_is_srgb = true
+albedo_color = Color(0.3599284, 0.7844335, 0.79441106, 1)
+
+[node name="Sonar" type="Node3D" unique_id=1320221945]
+
+[node name="Doppler" type="MeshInstance3D" parent="." unique_id=1588407255]
+transform = Transform3D(0.10999999, 0, 0, 0, -4.8082507e-09, 0.10999999, 0, -0.10999999, -4.8082507e-09, -21.51348, 1.1677669, -6.422646)
+top_level = true
+mesh = SubResource("CapsuleMesh_tu74e")
+surface_material_override/0 = SubResource("StandardMaterial3D_nd61g")
+
+[node name="btn_doppler" parent="." unique_id=769972517 instance=ExtResource("1_jngg8")]
+transform = Transform3D(0.5613891, 0, 0, 0, 1.3526582, -3.5527137e-15, 0, 1.4210855e-14, 0.39085838, -0.20573425, 1.3776779, 9.214949)
+visible = false
+prompt_message = "Pegar o Doppler"

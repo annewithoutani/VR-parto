@@ -45,7 +45,6 @@ func start_birth_sequence() -> void:
 		return
 
 	birth_sequence_started = true
-	await get_tree().create_timer(20.0).timeout
 
 	if not is_inside_tree():
 		return
