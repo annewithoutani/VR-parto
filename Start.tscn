@@ -395,7 +395,7 @@ prompt_message = "Corredor"
 local_to_teleport = NodePath("corredor")
 
 [node name="corredor" type="Marker3D" parent="Start/Button3" unique_id=1664393716]
-transform = Transform3D(-1.7940438e-08, -3.4421246e-15, -0.0031337128, -4.2919854e-08, 1.0774643, 0, -1.2804675, -2.4567603e-07, 4.273508e-10, -0.13220453, -4.817704, -0.77523804)
+transform = Transform3D(-1.7940444e-08, -3.4421246e-15, -0.0031337128, -4.2919854e-08, 1.0774643, 0, -1.2804675, -2.4567603e-07, 4.273508e-10, -0.13199997, -3, -1.3954468)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Start" unique_id=1524382135]
 environment = SubResource("Environment_gx2gx")
@@ -427,12 +427,7 @@ transform = Transform3D(0.2626794, 0, 2.375521, 0, 2.39, 0, -2.375521, 0, 0.2626
 [node name="mulher1" parent="Start/hospital bed" unique_id=1056274586 instance=ExtResource("6_b54qk")]
 transform = Transform3D(0.14716776, 0.3595897, -0.8964041, -0.11312235, 0.9069274, 0.345239, 0.9591916, 0.051787037, 0.1782501, -0.050165176, 0.12611665, 0.07918167)
 
-[node name="btn_barriga" parent="Start/hospital bed/mulher1" unique_id=1501922604 instance=ExtResource("3_xhal0")]
-transform = Transform3D(0.2083228, -0.029699188, -0.012555815, -0.0017321575, 0.064523816, -0.40565434, 0.021610426, 0.29147002, 0.08852179, -0.18993568, 1.1215587, -0.24469185)
-visible = false
-prompt_message = "Ouvir o coração"
-
-[node name="Human_rig" parent="Start/hospital bed/mulher1" index="1" unique_id=2094465142]
+[node name="Human_rig" parent="Start/hospital bed/mulher1" index="0" unique_id=2094465142]
 transform = Transform3D(0.9994517, 0.019284483, -0.026878905, -0.02491175, 0.97335196, -0.22796147, 0.021766506, 0.22850646, 0.97329915, -0.14637756, 0.17852259, -0.40959454)
 
 [node name="Skeleton3D" parent="Start/hospital bed/mulher1/Human_rig" index="0" unique_id=965591798]
@@ -472,6 +467,11 @@ bones/120/rotation = Quaternion(-0.47618875, 0.5923631, 0.618501, -0.19951637)
 bones/122/rotation = Quaternion(0.07376543, 0.7609374, -0.6146338, -0.19431545)
 bones/128/rotation = Quaternion(0.06654937, 0.6730379, 0.702735, -0.2208048)
 bones/132/rotation = Quaternion(-0.48894992, 0.7403976, -0.45993105, -0.03468412)
+
+[node name="btn_barriga" parent="Start/hospital bed/mulher1" unique_id=1501922604 instance=ExtResource("3_xhal0")]
+transform = Transform3D(0.2083228, -0.029699188, -0.012555815, -0.0017321575, 0.064523816, -0.40565434, 0.021610426, 0.29147002, 0.08852179, -0.18993568, 1.1215587, -0.24469185)
+visible = false
+prompt_message = "Ouvir o coração"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Start/hospital bed" unique_id=81416100]
 transform = Transform3D(0.9999999, 0, -1.4901161e-08, 0, 0.9999999, 0, 1.4901161e-08, 0, 0.9999999, -0.035966396, 0.3348083, -0.0009784698)
@@ -630,13 +630,13 @@ size = Vector3(14.968838, 8.482681, 9.569397)
 [node name="Sonar" type="Node3D" parent="Start/mesa1" unique_id=308794262]
 
 [node name="Doppler" type="MeshInstance3D" parent="Start/mesa1/Sonar" unique_id=1950493395]
-transform = Transform3D(0.10999999, 0, 0, 0, -4.8082507e-09, 0.10999999, 0, -0.10999999, -4.8082507e-09, -21.51348, 1.1677669, -6.422646)
+transform = Transform3D(0.3, 0, 0, 0, -1.3113417e-08, 0.3, 0, -0.3, -1.3113417e-08, -21.51348, 1.1677669, -6.331869)
 top_level = true
 mesh = SubResource("CapsuleMesh_tu74e")
 surface_material_override/0 = SubResource("StandardMaterial3D_nd61g")
 
 [node name="btn_doppler" parent="Start/mesa1/Sonar" unique_id=1245861682 instance=ExtResource("3_xhal0")]
-transform = Transform3D(0.5613891, 0, 0, 0, 1.3526582, -3.5527137e-15, 0, 1.4210855e-14, 0.39085838, -0.20573425, 1.3776779, 9.214949)
+transform = Transform3D(1.561, 0, 0, 0, 3.765, -1.4210855e-14, 0, 2.842171e-14, 1.088, -0.20573425, 0.41309357, 9.214949)
 visible = false
 prompt_message = "Pegar o Doppler"
 
@@ -756,7 +756,7 @@ visible = false
 transform = Transform3D(-0.11825103, 0, -1.6156785, 0, 1.6199999, 0, 1.6156785, 0, -0.11825103, -42.966522, 2.6560953, -23.083649)
 
 [node name="Doppler2" type="MeshInstance3D" parent="XROrigin3D/Direita/RightHand/DOPPLER" unique_id=1357242152]
-transform = Transform3D(0.10999999, 0, 0, 0, -4.8082507e-09, 0.10999999, 0, -0.10999999, -4.8082507e-09, 0, 0, -0.1)
+transform = Transform3D(0.3, 0, 0, 0, -1.3113417e-08, 0.3, 0, -0.3, -1.3113417e-08, 0, 0, -0.1)
 top_level = true
 visible = false
 mesh = SubResource("CapsuleMesh_tu74e")
