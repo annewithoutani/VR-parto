@@ -1,7 +1,7 @@
 extends Node3D
 
 ## Quantas vezes o som do coração toca seguidas (o arquivo dura uns 5 s).
-@export var repeticoes_coracao := 3
+@export var repeticoes_coracao := 2
 
 @onready var timer_espera: Timer = $TimerEspera
 @onready var timer_gemido: Timer = $TimerGemido
@@ -26,7 +26,7 @@ func usar_doppler() -> void:
 	doppler_ja_usado = true
 	timer_espera.stop()
 	_repeticoes_feitas = 0
-	batimento.volume_db = 0.0
+	batimento.volume_db = 60.0
 	batimento.play()
 
 func _on_finished() -> void:
@@ -40,6 +40,7 @@ func _on_finished() -> void:
 		timer_gemido.start()       # 5 s depois, os gemidos
 
 func _on_timer_espera_timeout() -> void:
+	print("[sala] batimento terminou")
 	doppler_ja_usado = true
 	_comecar_gemidos()
 
@@ -47,6 +48,7 @@ func _on_timer_gemido_timeout() -> void:
 	_comecar_gemidos()
 
 func _comecar_gemidos() -> void:
+	print("[sala] gemidos")
 	if not dor_mae.playing:
 		dor_mae.play()
 	timer_nascimento.start()       # 20 s de gemidos

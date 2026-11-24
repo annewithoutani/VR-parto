@@ -8,6 +8,7 @@ var birth_started := false
 var clipboard_instruction_started := false
 var segurando_doppler := false
 # ----------------------- DEBUG -----------------------
+var _modo_pc := false
 var _debug_control: Control
 var _pranch_local := Transform3D.IDENTITY
 var _pranch_offset := Vector3(0.14, -0.30, -0.5)
@@ -18,7 +19,7 @@ var _pranch_offset := Vector3(0.14, -0.30, -0.5)
 @onready var button_3: Interactable = $"../../Start/Button3"
 @onready var button_prancheta_mesa: Interactable = $"../../Start/Button"
 @onready var btn_prancheta: Interactable = $"../../Start/btn_prancheta"
-@onready var btn_barriga: Interactable = $"../../Start/btn_barriga"
+@onready var btn_barriga: Interactable = $"../../Start/hospital_bed/mulher1/btn_barriga"
 @onready var btn_doppler: Interactable = $"../../Start/mesa1/Sonar/btn_doppler"
 @onready var pranch: Node3D = $RightHand/PRANCH
 @onready var prancheta: Node3D = $"../../Start/prancheta"
@@ -49,7 +50,8 @@ func _ready() -> void:
 	bebe.hide();
 	doppler_mao.hide()
 	# ----------------------- DEBUG -----------------------
-	if OS.is_debug_build():
+	_modo_pc = OS.is_debug_build() and OS.get_name() != "Android"
+	if _modo_pc:
 		var canvas = CanvasLayer.new()
 		add_child(canvas) # Cria uma camada 2D por cima do mundo 3D
 		
@@ -161,7 +163,7 @@ const VELOCIDADE_TESTE := 3.0
 const ALCANCE_TESTE := 6.0
 
 func _process(delta: float) -> void:
-	if not OS.is_debug_build():
+	if not _modo_pc:
 		return
 	var cam: XRCamera3D = $"../XRCamera3D"
 
@@ -185,7 +187,7 @@ func _process(delta: float) -> void:
 	origem.global_position += (lado * entrada.x + frente * -entrada.y) * VELOCIDADE_TESTE * delta
 	
 func _unhandled_input(event: InputEvent) -> void:
-	if not OS.is_debug_build():
+	if not _modo_pc:
 		return
 	if event is InputEventMouseButton and event.is_pressed():
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP or event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
@@ -215,6 +217,7 @@ func _mirar() -> Dictionary:
 	var de := cam.global_position
 	var ate := de - cam.global_transform.basis.z * ALCANCE_TESTE
 	var consulta := PhysicsRayQueryParameters3D.create(de, ate)
+	consulta.collision_mask = 1
 	var corpo := get_node_or_null("../PlayerBody")
 	if corpo is CollisionObject3D:
 		consulta.exclude = [corpo.get_rid()]

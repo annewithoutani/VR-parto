@@ -386,7 +386,7 @@ prompt_message = "Sala de Parto"
 local_to_teleport = NodePath("dentrto da sala")
 
 [node name="dentrto da sala" type="Marker3D" parent="Start/Button2" unique_id=1939784644]
-transform = Transform3D(1, -5.684342e-14, 0, 1.0658141e-14, 0.9999999, 0, 0, 0, 0.9999999, -0.63601685, -4.436993, 776.6255)
+transform = Transform3D(1, -5.684342e-14, 0, 1.0658141e-14, 0.9999999, 0, 0, 0, 0.9999999, -0.63601685, -2.2848425, 776.6255)
 
 [node name="Button3" parent="Start" unique_id=887271474 node_paths=PackedStringArray("local_to_teleport") instance=ExtResource("3_xhal0")]
 transform = Transform3D(-3.7449226e-08, 0, -0.58113086, 0, 0.747369, 0, 0.85673857, 0, -2.540204e-08, -48.07395, 2.1756568, -5.4685354)
@@ -395,7 +395,7 @@ prompt_message = "Corredor"
 local_to_teleport = NodePath("corredor")
 
 [node name="corredor" type="Marker3D" parent="Start/Button3" unique_id=1664393716]
-transform = Transform3D(-1.7940444e-08, -3.4421246e-15, -0.0031337128, -4.2919854e-08, 1.0774643, 0, -1.2804675, -2.4567603e-07, 4.273508e-10, -0.13199997, -3, -1.3954468)
+transform = Transform3D(-1.7940451e-08, -3.4421246e-15, -0.0031337128, -4.2919854e-08, 1.0774643, 0, -1.2804675, -2.4567603e-07, 4.273508e-10, -0.13199997, -2.588009, -1.3954468)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Start" unique_id=1524382135]
 environment = SubResource("Environment_gx2gx")
@@ -421,16 +421,16 @@ visible = false
 use_collision = true
 size = Vector3(76.79524, 105.31201, 194.36656)
 
-[node name="hospital bed" parent="Start" unique_id=303509457 instance=ExtResource("18_rd4an")]
+[node name="hospital_bed" parent="Start" unique_id=303509457 instance=ExtResource("18_rd4an")]
 transform = Transform3D(0.2626794, 0, 2.375521, 0, 2.39, 0, -2.375521, 0, 0.2626794, -38.907463, -9.536743e-07, -18.732716)
 
-[node name="mulher1" parent="Start/hospital bed" unique_id=1056274586 instance=ExtResource("6_b54qk")]
+[node name="mulher1" parent="Start/hospital_bed" unique_id=1056274586 instance=ExtResource("6_b54qk")]
 transform = Transform3D(0.14716776, 0.3595897, -0.8964041, -0.11312235, 0.9069274, 0.345239, 0.9591916, 0.051787037, 0.1782501, -0.050165176, 0.12611665, 0.07918167)
 
-[node name="Human_rig" parent="Start/hospital bed/mulher1" index="0" unique_id=2094465142]
+[node name="Human_rig" parent="Start/hospital_bed/mulher1" index="0" unique_id=2094465142]
 transform = Transform3D(0.9994517, 0.019284483, -0.026878905, -0.02491175, 0.97335196, -0.22796147, 0.021766506, 0.22850646, 0.97329915, -0.14637756, 0.17852259, -0.40959454)
 
-[node name="Skeleton3D" parent="Start/hospital bed/mulher1/Human_rig" index="0" unique_id=965591798]
+[node name="Skeleton3D" parent="Start/hospital_bed/mulher1/Human_rig" index="0" unique_id=965591798]
 bones/1/rotation = Quaternion(0.5749439, 0.5517169, -0.3575597, 0.48703077)
 bones/2/rotation = Quaternion(0.5712014, 0.7133647, -0.24512678, -0.3236552)
 bones/3/rotation = Quaternion(0.036424834, 0.11935818, -0.09599812, 0.9875279)
@@ -468,12 +468,12 @@ bones/122/rotation = Quaternion(0.07376543, 0.7609374, -0.6146338, -0.19431545)
 bones/128/rotation = Quaternion(0.06654937, 0.6730379, 0.702735, -0.2208048)
 bones/132/rotation = Quaternion(-0.48894992, 0.7403976, -0.45993105, -0.03468412)
 
-[node name="btn_barriga" parent="Start/hospital bed/mulher1" unique_id=1501922604 instance=ExtResource("3_xhal0")]
+[node name="btn_barriga" parent="Start/hospital_bed/mulher1" unique_id=1501922604 instance=ExtResource("3_xhal0")]
 transform = Transform3D(0.2083228, -0.029699188, -0.012555815, -0.0017321575, 0.064523816, -0.40565434, 0.021610426, 0.29147002, 0.08852179, -0.18993568, 1.1215587, -0.24469185)
 visible = false
 prompt_message = "Ouvir o coração"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Start/hospital bed" unique_id=81416100]
+[node name="CSGBox3D" type="CSGBox3D" parent="Start/hospital_bed" unique_id=81416100]
 transform = Transform3D(0.9999999, 0, -1.4901161e-08, 0, 0.9999999, 0, 1.4901161e-08, 0, 0.9999999, -0.035966396, 0.3348083, -0.0009784698)
 visible = false
 use_collision = true
@@ -793,6 +793,6 @@ transform = Transform3D(-0.01594604, 0, -0.23946966, 0, 0.24, 0, 0.23946966, 0, 
 [connection signal="finished" from="Start/aud3" to="Start/aud4" method="_on_aud_3_finished"]
 [connection signal="button_pressed" from="XROrigin3D/Direita" to="XROrigin3D/Direita" method="_on_button_pressed"]
 
-[editable path="Start/hospital bed/mulher1"]
+[editable path="Start/hospital_bed/mulher1"]
 [editable path="Start/homem1"]
 [editable path="Start/door2"]
